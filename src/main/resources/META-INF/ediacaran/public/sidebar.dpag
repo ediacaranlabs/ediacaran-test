@@ -1,0 +1,33 @@
+{
+	"includes": [
+		"global"
+	],
+	"leftMenu": { 
+		"id": "leftMenu",
+		"expand": "xl",
+		"style": "side",
+		"itens": { 
+			"menu1": {
+				name: "Menu 1 (itens)",
+				itens: {
+					"item1": { name: "Item 1 (menu 1)", link: "#"},
+					"item2": { name: "Item 2 (menu 1)", link: "#"},
+					"item3": { name: "Item 3 (menu 1)", link: "#"},
+					"item4": { name: "Item 4 (menu 1)", link: "#"}
+				}
+			},
+			"menu2": { name: "Menu 2", link: "#" },
+			"menu3": {
+				name: "Menu 3 (itens)",
+				itens: {
+					"item1": { name: "Item 1 (menu 3)", link: "#"},
+					"item2": { name: "Item 2 (menu 3)", link: "#"},
+					"item3": { name: "Item 3 (menu 3)", link: "#"},
+					"item4": { name: "Item 4 (menu 3)", link: "#"}
+				}
+			}
+		}
+		
+	}
+	
+}
