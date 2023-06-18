@@ -69,27 +69,27 @@ public class PluginInstaller
 		menu
 			.addItem("typography")
 			.setName("Typography")
-			.setResource("typography.jsp");
+			.setResource("/plugins/ediacaran/test/typography.jsp");
 		
 		menu
 			.addItem("table")
 			.setName("Table")
-			.setResource("table.jsp");
+			.setResource("/plugins/ediacaran/test/table.jsp");
 		
 		menu
 			.addItem("components")
 			.setName("Components")
-			.setResource("components.jsp");
+			.setResource("/plugins/ediacaran/test/components.jsp");
 
 		menu
 			.addItem("forms")
 			.setName("Forms")
-			.setResource("form.jsp");
+			.setResource("/plugins/ediacaran/test/form.jsp");
 
 		menu
 			.addItem("flot")
 			.setName("Flot Charts")
-			.setResource("flot.jsp");
+			.setResource("/plugins/ediacaran/test/flot.jsp");
 
 		menu = menubar
 			.addMenu("pages")
@@ -98,12 +98,12 @@ public class PluginInstaller
 		menu
 			.addItem("pricing_box")
 			.setName("Pricing Boxes")
-			.setResource("pricingbox.jsp");
+			.setResource("/plugins/ediacaran/test/pricingbox.jsp");
 
 		menu
 			.addItem("sidebar")
 			.setName("Sidebar")
-			.setResource("sidebar.jsp");
+			.setResource("/plugins/ediacaran/test/sidebar.jsp");
 
 		menu = menubar
 			.addMenu("contato")
@@ -158,13 +158,13 @@ public class PluginInstaller
 		leftMenu.addMenu("components")
 			.setName("Components")
 			.setIcon("tree")
-			.setResource("#!/plugins/ediacaran/front/admin/components.jsp")
+			.setResource("#!/plugins/ediacaran/test/admin/components.jsp")
 			.setOrder(1);
 		
 		leftMenu.addMenu("forms")
 			.setName("Forms")
 			.setIcon("edit")
-			.setResource("#!/plugins/ediacaran/front/admin/form.jsp")
+			.setResource("#!/plugins/ediacaran/test/admin/form.jsp")
 			.setOrder(1);
 		
 		leftMenu.addMenu("typography")
