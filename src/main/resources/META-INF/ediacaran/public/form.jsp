@@ -678,90 +678,11 @@
 			</ed:row>
 			<ed:row>
 				<ed:col size="6">
-				    <link rel="Stylesheet" type="text/css" href="/plugins/ediacaran/front/templates/default_template/front/plugins/imageField/css/croppie.css" />
-					<script src="/plugins/ediacaran/front/templates/default_template/front/plugins/imageField/js/croppie.js"></script>
-					<script type="text/javascript">
-						$.AppContext.imageField = {};
-						
-						$.AppContext.imageField.apply = function ($root, $width, $height, $type){
-							
-							var $croppie   = $root.find(".croppie-image");
-							var $button    = $root.find("button");
-							var $fileField = $root.find("input[type='file']");
-							var $fieldName = $fileField.attr('name');
-							
-							$root.width($width);
-							$root.height($height);
-							
-							var $croppieObj = $($croppie).croppie({
-								viewport: {
-									width: $width,
-									height: $height,
-									type: $type
-								},
-								boundary: {
-									width: $width,
-									height: $height
-								},
-								showZoomer: false
-							});
-							
-							$croppieObj.on('update.croppie', function(ev, cropData) {
-								
-								var $x1 = $($root).find("input[name='" + $fieldName + ".x1']");
-								var $x2 = $($root).find("input[name='" + $fieldName + ".x2']");
-								var $y1 = $($root).find("input[name='" + $fieldName + ".y1']");
-								var $y2 = $($root).find("input[name='" + $fieldName + ".y2']");
-
-								$x1.val(cropData.points[0]);
-								$y1.val(cropData.points[1]);
-								
-								$x2.val(cropData.points[2]);
-								$y2.val(cropData.points[3]);
-								
-								console.log(
-										 "x1=" + cropData.points[0] +
-										",y1=" + cropData.points[1] +
-										",x2=" + cropData.points[2] +
-										",y2=" + cropData.points[3]
-								);
-								
-								console.log(JSON.stringify(cropData));
-							});
-
-							$($fileField).on('change', function(event){
-								var $url = URL.createObjectURL(event.target.files[0]);
-								
-								$croppieObj.croppie('bind', {
-									url: $url,
-								});
-								
-							});
-							
-							$button.click(function(){
-								$fileField.click();
-							});
-						};
-
-						$.AppContext.onload(function(){
-							
-							$.AppContext.imageField.apply($('#field-id'), 560, 292, 'squad');
-							
-						});
-						
-					</script>
-					<div id="field-id">
-						<div class="croppie-image"></div>
-						<ec:button label="Select Image" align="right"/>
-						<input name="field_name.x1" type="hidden" value="0">
-						<input name="field_name.y1" type="hidden" value="0">
-						<input name="field_name.x2" type="hidden" value="0">
-						<input name="field_name.y2" type="hidden" value="0">
-						<input name="field_name.file" type="file" style="display: none">
-					</div>
-				
+					<ec:imagefield align="center" 
+						width="320" height="200" border="squad" button="Select Image" />
 				</ed:col>
 				<ed:col size="6">
+					<ec:prettify linenums="true"><imagefield align="center" width="320" height="200" border="squad" button="Select Image" /></ec:prettify>
 				</ed:col>
 			</ed:row>
 		</ed:container>    

@@ -17,11 +17,10 @@
 	<ec:include uri="/includes/header.jsp"/>
 	
 	<ec:nivo-slider>
-		<c:forEach items="${pageObjects.slider}" var="item">
-			<ec:nivo-slider-item link="${item.src}" image="${item.img}" title="${item.title}">
-				${item.desc}		
+			<ec:nivo-slider-item link="#" 
+				image="/img/slide/bg-1.jpg" title="Crie facilmente aplicações">
+				Reduza a complexidade de suas aplicações com uma arquitetura modular.
 			</ec:nivo-slider-item>
-		</c:forEach>
 	</ec:nivo-slider>
 
 	<section class="content">
@@ -75,28 +74,28 @@
 
 				<ec:carousel>
 					<ec:carousel-item>
-						<a href="#"><ec:image src="/plugins/ediacaran/front/img/gallery/thumbs/image-01.jpg"/></a>
+						<a href="#"><ec:image src="/plugins/ediacaran/test/img/gallery/thumbs/image-01.jpg"/></a>
 					</ec:carousel-item> 
 					<ec:carousel-item>
-						<a href="#"><ec:image src="/plugins/ediacaran/front/img/gallery/thumbs/image-02.jpg"/></a>
+						<a href="#"><ec:image src="/plugins/ediacaran/test/img/gallery/thumbs/image-02.jpg"/></a>
 					</ec:carousel-item> 
 					<ec:carousel-item>
-						<a href="#"><ec:image src="/plugins/ediacaran/front/img/gallery/thumbs/image-03.jpg"/></a>
+						<a href="#"><ec:image src="/plugins/ediacaran/test/img/gallery/thumbs/image-03.jpg"/></a>
 					</ec:carousel-item> 
 					<ec:carousel-item>
-						<a href="#"><ec:image src="/plugins/ediacaran/front/img/gallery/thumbs/image-04.jpg"/></a>
+						<a href="#"><ec:image src="/plugins/ediacaran/test/img/gallery/thumbs/image-04.jpg"/></a>
 					</ec:carousel-item> 
 					<ec:carousel-item>
-						<a href="#"><ec:image src="/plugins/ediacaran/front/img/gallery/thumbs/image-05.jpg"/></a>
+						<a href="#"><ec:image src="/plugins/ediacaran/test/img/gallery/thumbs/image-05.jpg"/></a>
 					</ec:carousel-item> 
 					<ec:carousel-item>
-						<a href="#"><ec:image src="/plugins/ediacaran/front/img/gallery/thumbs/image-06.jpg"/></a>
+						<a href="#"><ec:image src="/plugins/ediacaran/test/img/gallery/thumbs/image-06.jpg"/></a>
 					</ec:carousel-item> 
 					<ec:carousel-item>
-						<a href="#"><ec:image src="/plugins/ediacaran/front/img/gallery/thumbs/image-07.jpg"/></a>
+						<a href="#"><ec:image src="/plugins/ediacaran/test/img/gallery/thumbs/image-07.jpg"/></a>
 					</ec:carousel-item> 
 					<ec:carousel-item>
-						<a href="#"><ec:image src="/plugins/ediacaran/front/img/gallery/thumbs/image-08.jpg"/></a>
+						<a href="#"><ec:image src="/plugins/ediacaran/test/img/gallery/thumbs/image-08.jpg"/></a>
 					</ec:carousel-item> 
 				</ec:carousel>
 

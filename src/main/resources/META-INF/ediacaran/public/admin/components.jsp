@@ -449,17 +449,17 @@
 				</ec:box-header>
 				<ec:box-body>
 					<ec:nivo-slider>
-						<ec:nivo-slider-item link="#" image="/img/slides/nivo/bg-1.jpg" title="DNS Dinâmico">
+						<ec:nivo-slider-item link="#" image="/plugins/ediacaran/test/img/slides/nivo/bg-1.jpg" title="DNS Dinâmico">
 							<p><strong>Augue iriure</strong> dolorum per ex, ne iisque ornatus veritus duo. Ex nobis integre 
 		                    lucilius sit, pri ea falli ludus appareat. Eum quodsi fuisset id, nostro patrioque qui id. Nominati 
 		                    eloquentiam in mea.</p>
 						</ec:nivo-slider-item>
-						<ec:nivo-slider-item link="#" image="/img/slides/nivo/bg-2.jpg" title="Calypte Cache">
+						<ec:nivo-slider-item link="#" image="/plugins/ediacaran/test/img/slides/nivo/bg-2.jpg" title="Calypte Cache">
 							<p><strong>Augue iriure</strong> dolorum per ex, ne iisque ornatus veritus duo. Ex nobis integre 
 		                    lucilius sit, pri ea falli ludus appareat. Eum quodsi fuisset id, nostro patrioque qui id. Nominati 
 		                    eloquentiam in mea.</p>
 						</ec:nivo-slider-item>
-						<ec:nivo-slider-item link="#" image="/img/slides/nivo/bg-3.jpg" title="Brutos Framework">
+						<ec:nivo-slider-item link="#" image="/plugins/ediacaran/test/img/slides/nivo/bg-3.jpg" title="Brutos Framework">
 							<p><strong>Augue iriure</strong> dolorum per ex, ne iisque ornatus veritus duo. Ex nobis integre 
 		                    lucilius sit, pri ea falli ludus appareat. Eum quodsi fuisset id, nostro patrioque qui id. Nominati 
 		                    eloquentiam in mea.</p>
@@ -484,44 +484,44 @@
 						</ec:gallery-filters>
 						<ec:gallery-images>
 							<ec:gallery-image filter="filter_a" 
-								icon="/img/gallery/thumbs/image-01.jpg" 
+								icon="/plugins/ediacaran/test/img/gallery/thumbs/image-01.jpg" 
 								text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis." 
-								src="/img/gallery/full/image-01-full.jpg" 
+								src="/plugins/ediacaran/test/img/gallery/full/image-01-full.jpg" 
 								title="The City" />
 							<ec:gallery-image filter="filter_a" 
-								icon="/img/gallery/thumbs/image-02.jpg" 
+								icon="/plugins/ediacaran/test/img/gallery/thumbs/image-02.jpg" 
 								text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis." 
-								src="/img/gallery/full/image-02-full.jpg" 
+								src="/plugins/ediacaran/test/img/gallery/full/image-02-full.jpg" 
 								title="The City"/>
 							<ec:gallery-image filter="filter_a" 
-								icon="/img/gallery/thumbs/image-03.jpg" 
+								icon="/plugins/ediacaran/test/img/gallery/thumbs/image-03.jpg" 
 								text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis." 
-								src="/img/gallery/full/image-03-full.jpg" 
+								src="/plugins/ediacaran/test/img/gallery/full/image-03-full.jpg" 
 								title="The City"/>
 							<ec:gallery-image
-								icon="/img/gallery/thumbs/image-04.jpg" 
+								icon="/plugins/ediacaran/test/img/gallery/thumbs/image-04.jpg" 
 								text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis." 
-								src="/img/gallery/full/image-04-full.jpg" 
+								src="/plugins/ediacaran/test/img/gallery/full/image-04-full.jpg" 
 								title="The City"/>
 							<ec:gallery-image 
-								icon="/img/gallery/thumbs/image-05.jpg" 
+								icon="/plugins/ediacaran/test/img/gallery/thumbs/image-05.jpg" 
 								text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis." 
-								src="/img/gallery/full/image-05-full.jpg" 
+								src="/plugins/ediacaran/test/img/gallery/full/image-05-full.jpg" 
 								title="The City"/>
 							<ec:gallery-image filter="filter_a" 
-								icon="/img/gallery/thumbs/image-06.jpg" 
+								icon="/plugins/ediacaran/test/img/gallery/thumbs/image-06.jpg" 
 								text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis." 
-								src="/img/gallery/full/image-06-full.jpg" 
+								src="/plugins/ediacaran/test/img/gallery/full/image-06-full.jpg" 
 								title="The City"/>
 							<ec:gallery-image 
-								icon="/img/gallery/thumbs/image-07.jpg" 
+								icon="/plugins/ediacaran/test/img/gallery/thumbs/image-07.jpg" 
 								text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis." 
-								src="/img/gallery/full/image-07-full.jpg" 
+								src="/plugins/ediacaran/test/img/gallery/full/image-07-full.jpg" 
 								title="The City"/>
 							<ec:gallery-image filter="filter_a" 
-								icon="/img/gallery/thumbs/image-08.jpg" 
+								icon="/plugins/ediacaran/test/img/gallery/thumbs/image-08.jpg" 
 								text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis." 
-								src="/img/gallery/full/image-08-full.jpg" 
+								src="/plugins/ediacaran/test/img/gallery/full/image-08-full.jpg" 
 								title="The City"/>
 						</ec:gallery-images>
 					</ec:gallery>
@@ -555,13 +555,13 @@
 				<ec:box-body>
 					<ec:carousel>
 						<ec:carousel-item>
-							<a href="#"><ec:image src="/img/gallery/thumbs/image-01.jpg"/></a>
+							<a href="#"><ec:image src="/plugins/ediacaran/test/img/gallery/thumbs/image-01.jpg"/></a>
 						</ec:carousel-item> 
 						<ec:carousel-item>
-							<a href="#"><ec:image src="/img/gallery/thumbs/image-02.jpg"/></a>
+							<a href="#"><ec:image src="/plugins/ediacaran/test/img/gallery/thumbs/image-02.jpg"/></a>
 						</ec:carousel-item> 
 						<ec:carousel-item>
-							<a href="#"><ec:image src="/img/gallery/thumbs/image-03.jpg"/></a>
+							<a href="#"><ec:image src="/plugins/ediacaran/test/img/gallery/thumbs/image-03.jpg"/></a>
 						</ec:carousel-item> 
 					</ec:carousel>
 				</ec:box-body>
