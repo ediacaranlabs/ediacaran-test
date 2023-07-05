@@ -64,36 +64,36 @@ public class PluginInstaller
 		
 		Menu menu = menubar
 			.addMenu("features")
-				.setName("Features");
+				.setName("Recursos");
 		
 		menu
 			.addItem("typography")
-			.setName("Typography")
+			.setName("Tipografia")
 			.setResource("/plugins/ediacaran/test/typography.jsp");
 		
 		menu
 			.addItem("table")
-			.setName("Table")
+			.setName("Tabelas")
 			.setResource("/plugins/ediacaran/test/table.jsp");
 		
 		menu
 			.addItem("components")
-			.setName("Components")
+			.setName("Componentes")
 			.setResource("/plugins/ediacaran/test/components.jsp");
 
 		menu
 			.addItem("forms")
-			.setName("Forms")
+			.setName("Formulários")
 			.setResource("/plugins/ediacaran/test/form.jsp");
 
 		menu
 			.addItem("flot")
-			.setName("Flot Charts")
+			.setName("Gráficos Flot")
 			.setResource("/plugins/ediacaran/test/flot.jsp");
 
 		menu = menubar
 			.addMenu("pages")
-				.setName("Pages");
+				.setName("Páginas");
 
 		menu
 			.addItem("pricing_box")
@@ -102,7 +102,7 @@ public class PluginInstaller
 
 		menu
 			.addItem("sidebar")
-			.setName("Sidebar")
+			.setName("Menu lateral")
 			.setResource("/plugins/ediacaran/test/sidebar.jsp");
 
 		menu = menubar
@@ -115,41 +115,43 @@ public class PluginInstaller
 	private void installFrontFooterDefaultMenu(MenuBar menubar) {
 		
 		menubar
-			.addMenu("item1")
-			.setName("Item 1")
-			.setResource("#");
-	
+		.addMenu("pricing_box")
+		.setName("Pricing Boxes")
+		.setResource("/plugins/ediacaran/test/pricingbox.jsp");
+
 		menubar
-			.addMenu("item2")
-			.setName("Item 2")
-			.setResource("#");
-	
-		menubar
-			.addMenu("item3")
-			.setName("Item 3")
-			.setResource("#");
+		.addMenu("sidebar")
+		.setName("Menu lateral")
+		.setResource("/plugins/ediacaran/test/sidebar.jsp");
 		
 	}
 
 	private void installFrontFooter2DefaultMenu(MenuBar menubar) {
 		
 		menubar
-			.addMenu("item1")
-			.setName("Item 1")
-			.setResource("#")
-			.addItem("item 1")
-				.setName("Menu item 1")
-				.setResource("#");
+		.addMenu("typography")
+		.setName("Tipografia")
+		.setResource("/plugins/ediacaran/test/typography.jsp");
+	
+		menubar
+		.addMenu("table")
+		.setName("Tabelas")
+		.setResource("/plugins/ediacaran/test/table.jsp");
+	
+		menubar
+		.addMenu("components")
+		.setName("Componentes")
+		.setResource("/plugins/ediacaran/test/components.jsp");
 
 		menubar
-			.addMenu("item2")
-			.setName("Item 2")
-			.setResource("#");
+		.addMenu("forms")
+		.setName("Formulários")
+		.setResource("/plugins/ediacaran/test/form.jsp");
 
 		menubar
-			.addMenu("item3")
-			.setName("Item 3")
-			.setResource("#");
+		.addMenu("flot")
+		.setName("Gráficos Flot")
+		.setResource("/plugins/ediacaran/test/flot.jsp");
 		
 	}
 	
