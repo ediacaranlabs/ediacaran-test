@@ -313,21 +313,25 @@ public class PluginInstaller
 	
 	private void uninstallDefaultMenu(MenuBar leftMenu) {
 		
-		leftMenu.removeMenu("components");
-		leftMenu.removeMenu("forms");
-		leftMenu.removeMenu("typography");
-		leftMenu.removeMenu("tables");
-		leftMenu.removeMenu("pricing_boxes");
-		leftMenu.removeMenu("flot_charts");
-		leftMenu.removeMenu("menu");
+		if(leftMenu != null) {
+			leftMenu.removeMenu("components");
+			leftMenu.removeMenu("forms");
+			leftMenu.removeMenu("typography");
+			leftMenu.removeMenu("tables");
+			leftMenu.removeMenu("pricing_boxes");
+			leftMenu.removeMenu("flot_charts");
+			leftMenu.removeMenu("menu");
+		}
 		
 	}
 	
 	private void uninstallDefaultTopMenu(MenuBar topMenu) {
 		
-		topMenu.removeMenu("messages");
-		topMenu.removeMenu("notification");
-		topMenu.removeMenu("menu");
+		if(topMenu != null) {
+			topMenu.removeMenu("messages");
+			topMenu.removeMenu("notification");
+			topMenu.removeMenu("menu");
+		}
 		
 	}
 	
@@ -341,17 +345,21 @@ public class PluginInstaller
 	
 	private void uninstallFrontFooterDefaultMenu(MenuBar menubar) {
 		
-		menubar.removeMenu("item1");
-		menubar.removeMenu("item2");
-		menubar.removeMenu("item3");
+		if(menubar != null) {
+			menubar.removeMenu("item1");
+			menubar.removeMenu("item2");
+			menubar.removeMenu("item3");
+		}
 		
 	}
 
 	private void uninstallFrontFooter2DefaultMenu(MenuBar menubar) {
 		
-		menubar.removeMenu("item1");
-		menubar.removeMenu("item2");
-		menubar.removeMenu("item3");
+		if(menubar != null) {
+			menubar.removeMenu("item1");
+			menubar.removeMenu("item2");
+			menubar.removeMenu("item3");
+		}
 		
 	}	
 	
