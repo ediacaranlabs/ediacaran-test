@@ -370,6 +370,10 @@
 	                    	<p>Cu cum commodo regione definiebas. Cum ea eros laboramus, audire deseruisse his at, munere 
 	                    	aeterno ut quo. Et ius doming causae philosophia, vitae bonorum intellegat usu cu.</p>
 						</ec:tabs-item>
+						<ec:tabs-item icon="download" title="four">
+	                    	<p>Cu cum commodo regione definiebas. Cum ea eros laboramus, audire deseruisse his at, munere 
+	                    	aeterno ut quo. Et ius doming causae philosophia, vitae bonorum intellegat usu cu.</p>
+						</ec:tabs-item>
 					</ec:tabs>
 				</ec:box-body>
 			</ec:box>
