@@ -162,6 +162,12 @@ public class PluginInstaller
 			.setIcon("tree")
 			.setResource("#!/plugins/ediacaran/test/admin/components.jsp")
 			.setOrder(1);
+
+		leftMenu.addMenu("buttons")
+		.setName("Buttons")
+		.setIcon("tree")
+		.setResource("#!/plugins/ediacaran/test/admin/buttons.jsp")
+		.setOrder(1);
 		
 		leftMenu.addMenu("forms")
 			.setName("Forms")
