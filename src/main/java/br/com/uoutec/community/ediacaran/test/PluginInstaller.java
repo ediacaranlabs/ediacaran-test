@@ -2,11 +2,6 @@ package br.com.uoutec.community.ediacaran.test;
 
 import br.com.uoutec.community.ediacaran.AbstractPlugin;
 import br.com.uoutec.community.ediacaran.front.objects.MenubarObjectsManagerDriver;
-import br.com.uoutec.community.ediacaran.front.objects.ObjectsManager.ObjectMetadata;
-import br.com.uoutec.community.ediacaran.front.objects.ObjectsManager.ObjectValue;
-import br.com.uoutec.community.ediacaran.front.objects.ObjectsManagerDriver.ObjectsManagerDriverListener;
-import br.com.uoutec.community.ediacaran.front.objects.PathMetadata;
-import br.com.uoutec.community.ediacaran.front.page.ObjectsTemplateManager;
 import br.com.uoutec.community.ediacaran.front.pub.Menu;
 import br.com.uoutec.community.ediacaran.front.pub.MenuBar;
 import br.com.uoutec.community.ediacaran.front.pub.widget.Widget;
@@ -14,6 +9,11 @@ import br.com.uoutec.community.ediacaran.front.pub.widget.WidgetException;
 import br.com.uoutec.community.ediacaran.front.pub.widget.Widgets;
 import br.com.uoutec.community.ediacaran.front.security.pub.WebSecurityManagerPlugin;
 import br.com.uoutec.community.ediacaran.plugins.EntityContextPlugin;
+import br.com.uoutec.community.ediacaran.system.repository.ObjectMetadata;
+import br.com.uoutec.community.ediacaran.system.repository.ObjectValue;
+import br.com.uoutec.community.ediacaran.system.repository.ObjectsManagerDriver.ObjectsManagerDriverListener;
+import br.com.uoutec.community.ediacaran.system.repository.ObjectsTemplateManager;
+import br.com.uoutec.community.ediacaran.system.repository.PathMetadata;
 import br.com.uoutec.entity.registry.RegistryException;
 
 public class PluginInstaller 
