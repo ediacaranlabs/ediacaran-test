@@ -54,7 +54,7 @@ public class PluginInstaller
 	private void installDefaultMenus() {
 		this.defaultAdminMenuListener = new DefaultAdminMenuListener();
 		this.defaultFrontMenuListener = new DefaultFrontMenuListener();
-		
+
 		ObjectsTemplateManager objectsManager = EntityContextPlugin.getEntity(ObjectsTemplateManager.class);
 		objectsManager.addListener(MenubarObjectsManagerDriver.DRIVER_NAME, this.defaultAdminMenuListener);
 		objectsManager.addListener(MenubarObjectsManagerDriver.DRIVER_NAME, this.defaultFrontMenuListener);
