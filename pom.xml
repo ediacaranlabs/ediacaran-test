@@ -9,6 +9,8 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+ 		<junit.jupiter.version>5.9.1</junit.jupiter.version>
+        <junit.platform.version>1.9.1</junit.platform.version>		
 	</properties>
 
 	<build>
@@ -66,29 +68,50 @@
 			<scope>provided</scope>
 		</dependency>
 		<!-- /plugins -->
+		<!-- dependencies -->
+		<dependency>
+			<groupId>br.com.uoutec</groupId>
+			<artifactId>application</artifactId>
+			<version>1.0.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- ediacaran -->
 		<dependency>
 			<groupId>br.com.uoutec</groupId>
 			<artifactId>ediacaran</artifactId>
 			<version>1.0.0</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.jboss.weld.servlet</groupId>
-					<artifactId>weld-servlet</artifactId>
-				</exclusion>
-			</exclusions>
 			<scope>provided</scope>
 		</dependency>
+		<!-- JUnit -->
+		<!-- test -->
+		<dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-suite</artifactId>
+            <version>${junit.platform.version}</version>
+            <scope>provided</scope>
+        </dependency>
 		<dependency>
 			<groupId>br.com.uoutec</groupId>
 			<artifactId>ediacaran-weld</artifactId>
 			<version>1.0.0</version>
-			<scope>provided</scope>
-		</dependency>
-		<!-- JUnit -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.9</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -98,11 +121,29 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>net.sourceforge.jwebunit</groupId>
-			<artifactId>jwebunit-htmlunit-plugin</artifactId>
-			<version>3.3</version>
+			<groupId>br.com.uoutec</groupId>
+			<artifactId>ediacaran-junit-mock</artifactId>
+			<version>1.0.0</version>
 			<scope>test</scope>
-		</dependency>		
+		</dependency>
+		<dependency>
+		    <groupId>org.mockito</groupId>
+		    <artifactId>mockito-core</artifactId>
+		    <version>5.4.0</version>
+		    <scope>test</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.hsqldb</groupId>
+		    <artifactId>hsqldb</artifactId>
+		    <version>2.5.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-core</artifactId>
+		    <version>5.4.33.Final</version>
+   			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 </project>

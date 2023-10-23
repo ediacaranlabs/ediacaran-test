@@ -1,4 +1,4 @@
-package br.com.uoutec.community.ediacaran;
+package br.com.uoutec.community.ediacaran.test;
 
 import java.io.File;
 import java.io.IOException;
@@ -7,6 +7,8 @@ import java.util.Map;
 
 import br.com.uoutec.application.se.ApplicationBootstrapProxy;
 import br.com.uoutec.application.se.StartParamsParser;
+import br.com.uoutec.community.ediacaran.EdiacaranBootstrap;
+import br.com.uoutec.community.ediacaran.VarParser;
 import br.com.uoutec.community.ediacaran.plugins.PluginParserException;
 import br.com.uoutec.community.ediacaran.plugins.PluginsLoader;
 import br.com.uoutec.community.ediacaran.weld.ApplicationCreator;
