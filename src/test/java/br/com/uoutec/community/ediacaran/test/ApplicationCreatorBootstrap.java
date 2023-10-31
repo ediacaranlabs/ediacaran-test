@@ -9,10 +9,10 @@ import br.com.uoutec.application.se.ApplicationBootstrapProxy;
 import br.com.uoutec.application.se.StartParamsParser;
 import br.com.uoutec.community.ediacaran.EdiacaranBootstrap;
 import br.com.uoutec.community.ediacaran.VarParser;
+import br.com.uoutec.community.ediacaran.plugins.BuilderClassLoaderFactory;
 import br.com.uoutec.community.ediacaran.plugins.PluginParserException;
 import br.com.uoutec.community.ediacaran.plugins.PluginsLoader;
 import br.com.uoutec.community.ediacaran.weld.ApplicationCreator;
-import br.com.uoutec.community.ediacaran.weld.BuilderClassLoaderFactory;
 
 public class ApplicationCreatorBootstrap {
 	
