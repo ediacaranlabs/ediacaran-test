@@ -1,21 +1,18 @@
 package br.com.uoutec.community.ediacaran.test;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.util.Map;
 
-import br.com.uoutec.application.se.ApplicationBootstrapProxy;
-import br.com.uoutec.application.se.StartParamsParser;
-import br.com.uoutec.ediacaran.core.EdiacaranBootstrap;
-import br.com.uoutec.ediacaran.core.VarParser;
-import br.com.uoutec.ediacaran.core.plugins.BuilderClassLoaderFactory;
-import br.com.uoutec.ediacaran.core.plugins.PluginParserException;
-import br.com.uoutec.ediacaran.core.plugins.PluginsLoader;
-import br.com.uoutec.ediacaran.weld.ApplicationCreator;
+import br.com.uoutec.ediacaran.core.ApplicationStart;
 
 public class ApplicationCreatorBootstrap {
 	
+
+	public static void main(String[] vars) throws IOException, URISyntaxException {
+		ApplicationStart.main(vars); 
+	}
+	
+	/*
 	public static void main(String[] s) throws IOException, URISyntaxException, PluginParserException {
 		
 		StartParamsParser parser   = new StartParamsParser();
@@ -38,14 +35,14 @@ public class ApplicationCreatorBootstrap {
         PluginsLoader pl = eb.getPluginsLoader();
         VarParser vp = eb.getVarParser();
         
-        appCreator.setAppBase(new File(System.getProperty("app.base")) );
-        appCreator.setDestBase(new File("c:/ediacaran"));
+        appCreator.setAppBase(Vfs.getPath(SystemProperties.getProperty("app.base")) );
+        appCreator.setDestBase(Vfs.getPath("c:/ediacaran"));
         appCreator.setLibClassPath(bclf.getLibClassPath());
         appCreator.setPluginsClassPath(bclf.getPluginsClassPath());
         appCreator.setPluginsLoader(pl);
         appCreator.setVarParser(vp);
         appCreator.createApplication();
 	}
-
+    */
 	
 }
