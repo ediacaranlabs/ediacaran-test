@@ -69,27 +69,27 @@ public class PluginInstaller
 		menu
 			.addItem("typography")
 			.setName("Tipografia")
-			.setResource("/plugins/ediacaran/test/typography.jsp");
+			.setResource("/typography.jsp");
 		
 		menu
 			.addItem("table")
 			.setName("Tabelas")
-			.setResource("/plugins/ediacaran/test/table.jsp");
+			.setResource("/table.jsp");
 		
 		menu
 			.addItem("components")
 			.setName("Componentes")
-			.setResource("/plugins/ediacaran/test/components.jsp");
+			.setResource("/components.jsp");
 
 		menu
 			.addItem("forms")
 			.setName("Formulários")
-			.setResource("/plugins/ediacaran/test/form.jsp");
+			.setResource("/form.jsp");
 
 		menu
 			.addItem("flot")
 			.setName("Gráficos Flot")
-			.setResource("/plugins/ediacaran/test/flot.jsp");
+			.setResource("/flot.jsp");
 
 		menu = menubar
 			.addMenu("pages")
@@ -98,12 +98,12 @@ public class PluginInstaller
 		menu
 			.addItem("pricing_box")
 			.setName("Pricing Boxes")
-			.setResource("/plugins/ediacaran/test/pricingbox.jsp");
+			.setResource("/pricingbox.jsp");
 
 		menu
 			.addItem("sidebar")
 			.setName("Menu lateral")
-			.setResource("/plugins/ediacaran/test/sidebar.jsp");
+			.setResource("/sidebar.jsp");
 
 		menu = menubar
 			.addMenu("contato")
@@ -117,12 +117,12 @@ public class PluginInstaller
 		menubar
 		.addMenu("pricing_box")
 		.setName("Pricing Boxes")
-		.setResource("/plugins/ediacaran/test/pricingbox.jsp");
+		.setResource("/pricingbox.jsp");
 
 		menubar
 		.addMenu("sidebar")
 		.setName("Menu lateral")
-		.setResource("/plugins/ediacaran/test/sidebar.jsp");
+		.setResource("/sidebar.jsp");
 		
 	}
 
@@ -131,27 +131,27 @@ public class PluginInstaller
 		menubar
 		.addMenu("typography")
 		.setName("Tipografia")
-		.setResource("/plugins/ediacaran/test/typography.jsp");
+		.setResource("/typography.jsp");
 	
 		menubar
 		.addMenu("table")
 		.setName("Tabelas")
-		.setResource("/plugins/ediacaran/test/table.jsp");
+		.setResource("/table.jsp");
 	
 		menubar
 		.addMenu("components")
 		.setName("Componentes")
-		.setResource("/plugins/ediacaran/test/components.jsp");
+		.setResource("/components.jsp");
 
 		menubar
 		.addMenu("forms")
 		.setName("Formulários")
-		.setResource("/plugins/ediacaran/test/form.jsp");
+		.setResource("/form.jsp");
 
 		menubar
 		.addMenu("flot")
 		.setName("Gráficos Flot")
-		.setResource("/plugins/ediacaran/test/flot.jsp");
+		.setResource("/flot.jsp");
 		
 	}
 	
@@ -160,43 +160,43 @@ public class PluginInstaller
 		leftMenu.addMenu("components")
 			.setName("Components")
 			.setIcon("tree")
-			.setResource("#!/plugins/ediacaran/test/admin/components.jsp")
+			.setResource("#!/admin/components.jsp")
 			.setOrder(1);
 
 		leftMenu.addMenu("buttons")
 		.setName("Buttons")
 		.setIcon("tree")
-		.setResource("#!/plugins/ediacaran/test/admin/buttons.jsp")
+		.setResource("#!/admin/buttons.jsp")
 		.setOrder(1);
 		
 		leftMenu.addMenu("forms")
 			.setName("Forms")
 			.setIcon("edit")
-			.setResource("#!/plugins/ediacaran/test/admin/form.jsp")
+			.setResource("#!/admin/form.jsp")
 			.setOrder(1);
 		
 		leftMenu.addMenu("typography")
 			.setName("Typography")
 			.setIcon("pencil")
-			.setResource("#!/plugins/ediacaran/test/admin/typography.jsp")
+			.setResource("#!/admin/typography.jsp")
 			.setOrder(1);
 		
 		leftMenu.addMenu("tables")
 			.setName("Tables")
 			.setIcon("table")
-			.setResource("#!/plugins/ediacaran/test/admin/table.jsp")
+			.setResource("#!/admin/table.jsp")
 			.setOrder(1);
 		
 		leftMenu.addMenu("pricing_boxes")
 			.setName("Pricing boxes")
 			.setIcon("money")
-			.setResource("#!/plugins/ediacaran/test/admin/pricingbox.jsp")
+			.setResource("#!/admin/pricingbox.jsp")
 			.setOrder(1);
 		
 		leftMenu.addMenu("flot_charts")
 			.setName("Flot Charts")
 			.setIcon("pie-chart")
-			.setResource("#!/plugins/ediacaran/test/admin/flotcharts.jsp")
+			.setResource("#!/admin/flotcharts.jsp")
 			.setOrder(1);
 		
 		Menu menu = leftMenu.addMenu("menu")
@@ -264,8 +264,8 @@ public class PluginInstaller
 	private void installWidgets() throws WidgetException {
 		Widgets widgets = EntityContextPlugin.getEntity(Widgets.class);
 		
-		widgets.addWidget(new Widget("w1", "/plugins/ediacaran/test/admin/widgets/w1.jsp", 100));
-		widgets.addWidget(new Widget("w2", "/plugins/ediacaran/test/admin/widgets/w2.jsp", 100));
+		widgets.addWidget(new Widget("w1", "/admin/widgets/w1.jsp", 100));
+		widgets.addWidget(new Widget("w2", "/admin/widgets/w2.jsp", 100));
 		
 	}
 	

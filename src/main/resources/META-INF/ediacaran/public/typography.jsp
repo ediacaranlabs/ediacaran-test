@@ -57,7 +57,7 @@
 				</ed:col>
 				<ed:col size="4">
 		            <h4>Float image in paragraph</h4>
-		            <ec:image src="/plugins/ediacaran/test/img/dummy-1.jpg" align="left" />
+		            <ec:image src="/img/dummy-1.jpg" align="left" />
 		            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam non mod tempor invidunt ut 
 		            labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et eabum. Stet clita kasd gubergren, no sea takimata sanctus
 		            est Lorem ipsum dolor sit amet</p>

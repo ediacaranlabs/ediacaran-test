@@ -46,44 +46,44 @@
 						</ec:gallery-filters>
 						<ec:gallery-images>
 							<ec:gallery-image filter="filter_a" 
-								icon="/plugins/ediacaran/test/img/gallery/thumbs/image-01.jpg" 
+								icon="/img/gallery/thumbs/image-01.jpg" 
 								text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis." 
-								src="/plugins/ediacaran/test/img/gallery/full/image-01-full.jpg" 
+								src="/img/gallery/full/image-01-full.jpg" 
 								title="The City" />
 							<ec:gallery-image filter="filter_a" 
-								icon="/plugins/ediacaran/test/img/gallery/thumbs/image-02.jpg" 
+								icon="/img/gallery/thumbs/image-02.jpg" 
 								text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis." 
-								src="/plugins/ediacaran/test/img/gallery/full/image-02-full.jpg" 
+								src="/img/gallery/full/image-02-full.jpg" 
 								title="The City"/>
 							<ec:gallery-image filter="filter_a" 
-								icon="/plugins/ediacaran/test/img/gallery/thumbs/image-03.jpg" 
+								icon="/img/gallery/thumbs/image-03.jpg" 
 								text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis." 
-								src="/plugins/ediacaran/test/img/gallery/full/image-03-full.jpg" 
+								src="/img/gallery/full/image-03-full.jpg" 
 								title="The City"/>
 							<ec:gallery-image
-								icon="/plugins/ediacaran/test/img/gallery/thumbs/image-04.jpg" 
+								icon="/img/gallery/thumbs/image-04.jpg" 
 								text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis." 
-								src="/plugins/ediacaran/test/img/gallery/full/image-04-full.jpg" 
+								src="/img/gallery/full/image-04-full.jpg" 
 								title="The City"/>
 							<ec:gallery-image 
-								icon="/plugins/ediacaran/test/img/gallery/thumbs/image-05.jpg" 
+								icon="/img/gallery/thumbs/image-05.jpg" 
 								text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis." 
-								src="/plugins/ediacaran/test/img/gallery/full/image-05-full.jpg" 
+								src="/img/gallery/full/image-05-full.jpg" 
 								title="The City"/>
 							<ec:gallery-image filter="filter_a" 
-								icon="/plugins/ediacaran/test/img/gallery/thumbs/image-06.jpg" 
+								icon="/img/gallery/thumbs/image-06.jpg" 
 								text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis." 
-								src="/plugins/ediacaran/test/img/gallery/full/image-06-full.jpg" 
+								src="/img/gallery/full/image-06-full.jpg" 
 								title="The City"/>
 							<ec:gallery-image 
-								icon="/plugins/ediacaran/test/img/gallery/thumbs/image-07.jpg" 
+								icon="/img/gallery/thumbs/image-07.jpg" 
 								text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis." 
-								src="/plugins/ediacaran/test/img/gallery/full/image-07-full.jpg" 
+								src="/img/gallery/full/image-07-full.jpg" 
 								title="The City"/>
 							<ec:gallery-image filter="filter_a" 
-								icon="/plugins/ediacaran/test/img/gallery/thumbs/image-08.jpg" 
+								icon="/img/gallery/thumbs/image-08.jpg" 
 								text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis." 
-								src="/plugins/ediacaran/test/img/gallery/full/image-08-full.jpg" 
+								src="/img/gallery/full/image-08-full.jpg" 
 								title="The City"/>
 						</ec:gallery-images>
 					</ec:gallery>
@@ -113,13 +113,13 @@
                 	<h4>Carousel</h4>
 					<ec:carousel>
 						<ec:carousel-item>
-							<a href="#"><ec:image src="/plugins/ediacaran/test/img/gallery/thumbs/image-01.jpg"/></a>
+							<a href="#"><ec:image src="/img/gallery/thumbs/image-01.jpg"/></a>
 						</ec:carousel-item> 
 						<ec:carousel-item>
-							<a href="#"><ec:image src="/plugins/ediacaran/test/img/gallery/thumbs/image-02.jpg"/></a>
+							<a href="#"><ec:image src="/img/gallery/thumbs/image-02.jpg"/></a>
 						</ec:carousel-item> 
 						<ec:carousel-item>
-							<a href="#"><ec:image src="/plugins/ediacaran/test/img/gallery/thumbs/image-03.jpg"/></a>
+							<a href="#"><ec:image src="/img/gallery/thumbs/image-03.jpg"/></a>
 						</ec:carousel-item> 
 					</ec:carousel>                	
 				</ed:col>
@@ -142,13 +142,13 @@
 				<ed:col size="6">
                 	<h4>Nivo</h4>
 					<ec:nivo-slider>
-						<ec:nivo-slider-item link="#" image="/plugins/ediacaran/test/img/slides/nivo/bg-1.jpg" title="Slide 1">
+						<ec:nivo-slider-item link="#" image="/img/slides/nivo/bg-1.jpg" title="Slide 1">
 							<p><strong>Augue iriure</strong> dolorum per ex, ne iisque ornatus veritus duo. </p>
 						</ec:nivo-slider-item>
-						<ec:nivo-slider-item link="#" image="/plugins/ediacaran/test/img/slides/nivo/bg-2.jpg" title="Slide 2">
+						<ec:nivo-slider-item link="#" image="/img/slides/nivo/bg-2.jpg" title="Slide 2">
 							<p><strong>Augue iriure</strong> dolorum per ex, ne iisque ornatus veritus duo. </p>
 						</ec:nivo-slider-item>
-						<ec:nivo-slider-item link="#" image="/plugins/ediacaran/test/img/slides/nivo/bg-3.jpg" title="Slide 3">
+						<ec:nivo-slider-item link="#" image="/img/slides/nivo/bg-3.jpg" title="Slide 3">
 							<p><strong>Augue iriure</strong> dolorum per ex, ne iisque ornatus veritus duo. </p>
 						</ec:nivo-slider-item>
 					</ec:nivo-slider>
@@ -379,7 +379,7 @@
 			<ed:row>
 				<ed:col size="6">
 	                <h4>Testimonial</h4>
-	                <ec:testimonial name="Testimonial name" image="/plugins/ediacaran/test/img/user.png">
+	                <ec:testimonial name="Testimonial name" image="/img/user.png">
 		                There are many variations of passages of randomised words which don't look even slightly 
 		                believable. You need to be sure there isn't anything embarrassing of text.
 		                <ec:testimonial-info>
@@ -388,7 +388,7 @@
 	                </ec:testimonial>
 				</ed:col>
 				<ed:col size="6">
-					<ec:prettify linenums="true"><testimonial name="Testimonial name" image="/plugins/ediacaran/test/img/user.png">
+					<ec:prettify linenums="true"><testimonial name="Testimonial name" image="/img/user.png">
 	There are many variations of passages of randomised words which don't look even slightly 
 	believable. You need to be sure there isn't anything embarrassing of text.
 	<testimonial-info>
