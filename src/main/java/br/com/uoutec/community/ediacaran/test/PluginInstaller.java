@@ -50,14 +50,12 @@ public class PluginInstaller
 
 	@Override
 	public void uninstall() throws Throwable {
-		
 		ContextSystemSecurityCheck.doPrivileged(()->{
 			uninstallDefaultMenus();
 			uninstallWidget();
 			uninstallSecurityConfig();
 			return null;
 		});
-		
 	}
 
 	private void installDefaultMenus() {
