@@ -1,5 +1,6 @@
 package br.com.uoutec.community.ediacaran.test;
 
+import br.com.uoutec.application.security.ContextSystemSecurityCheck;
 import br.com.uoutec.community.ediacaran.front.objects.MenubarObjectsManagerDriver;
 import br.com.uoutec.community.ediacaran.front.pub.Menu;
 import br.com.uoutec.community.ediacaran.front.pub.MenuBar;
@@ -10,10 +11,10 @@ import br.com.uoutec.community.ediacaran.front.security.pub.WebSecurityManagerPl
 import br.com.uoutec.community.ediacaran.system.repository.ObjectMetadata;
 import br.com.uoutec.community.ediacaran.system.repository.ObjectValue;
 import br.com.uoutec.community.ediacaran.system.repository.ObjectsManagerDriver.ObjectsManagerDriverListener;
-import br.com.uoutec.ediacaran.core.AbstractPlugin;
-import br.com.uoutec.ediacaran.core.plugins.EntityContextPlugin;
 import br.com.uoutec.community.ediacaran.system.repository.ObjectsTemplateManager;
 import br.com.uoutec.community.ediacaran.system.repository.PathMetadata;
+import br.com.uoutec.ediacaran.core.AbstractPlugin;
+import br.com.uoutec.ediacaran.core.plugins.EntityContextPlugin;
 import br.com.uoutec.entity.registry.RegistryException;
 
 public class PluginInstaller 
@@ -39,16 +40,24 @@ public class PluginInstaller
 	
 	@Override
 	public void install() throws Throwable {
-		installDefaultMenus();
-		installWidgets();
-		installSecurityConfig();
+		ContextSystemSecurityCheck.doPrivileged(()->{
+			installDefaultMenus();
+			installWidgets();
+			installSecurityConfig();
+			return null;
+		});
 	}
 
 	@Override
 	public void uninstall() throws Throwable {
-		uninstallDefaultMenus();
-		uninstallWidget();
-		uninstallSecurityConfig();
+		
+		ContextSystemSecurityCheck.doPrivileged(()->{
+			uninstallDefaultMenus();
+			uninstallWidget();
+			uninstallSecurityConfig();
+			return null;
+		});
+		
 	}
 
 	private void installDefaultMenus() {
@@ -300,13 +309,16 @@ public class PluginInstaller
 		
 		objectsManager.removeListener(MenubarObjectsManagerDriver.DRIVER_NAME, this.defaultAdminMenuListener);
 		
+		/*
 		MenuBar leftMenu = (MenuBar) objectsManager.getObject(MenubarObjectsManagerDriver.DRIVER_NAME + ADMIN_MENU_BAR_PATH + "/" + ADMIN_MENU_BAR);
 		MenuBar topMenu = (MenuBar) objectsManager.getObject(MenubarObjectsManagerDriver.DRIVER_NAME + ADMIN_MENU_BAR_PATH + "/" + ADMIN_TOP_MENU_BAR);
 		uninstallDefaultMenu(leftMenu);
 		uninstallDefaultTopMenu(topMenu);
+		*/
 		
 		objectsManager.removeListener(MenubarObjectsManagerDriver.DRIVER_NAME, this.defaultFrontMenuListener);
 
+		/*
 		MenuBar frontTopMenu = (MenuBar) objectsManager.getObject(MenubarObjectsManagerDriver.DRIVER_NAME + FRONT_MENU_BAR_PATH + "/" + FRONT_MENU_BAR);
 		MenuBar frontFooterMenu = (MenuBar) objectsManager.getObject(MenubarObjectsManagerDriver.DRIVER_NAME + FRONT_MENU_BAR_PATH + "/" + FRONT_FOOTER_MENU_BAR);
 		MenuBar frontFooter2Menu = (MenuBar) objectsManager.getObject(MenubarObjectsManagerDriver.DRIVER_NAME + FRONT_MENU_BAR_PATH + "/" + FRONT_FOOTER2_MENU_BAR);
@@ -314,6 +326,7 @@ public class PluginInstaller
 		uninstallFrontDefaultMenu(frontTopMenu);
 		uninstallFrontFooterDefaultMenu(frontFooterMenu);
 		uninstallFrontFooter2DefaultMenu(frontFooter2Menu);
+		*/
 		
 	}
 	
