@@ -1,5 +1,8 @@
 package br.com.uoutec.community.ediacaran.test;
 
+import java.io.IOException;
+
+import br.com.uoutec.application.io.VfsException;
 import br.com.uoutec.application.security.ContextSystemSecurityCheck;
 import br.com.uoutec.community.ediacaran.front.objects.MenubarObjectsManagerDriver;
 import br.com.uoutec.community.ediacaran.front.pub.Menu;
@@ -8,6 +11,7 @@ import br.com.uoutec.community.ediacaran.front.pub.widget.Widget;
 import br.com.uoutec.community.ediacaran.front.pub.widget.WidgetException;
 import br.com.uoutec.community.ediacaran.front.pub.widget.Widgets;
 import br.com.uoutec.community.ediacaran.front.security.pub.WebSecurityManagerPlugin;
+import br.com.uoutec.community.ediacaran.system.i18n.Plugini18nManager;
 import br.com.uoutec.community.ediacaran.system.repository.ObjectMetadata;
 import br.com.uoutec.community.ediacaran.system.repository.ObjectValue;
 import br.com.uoutec.community.ediacaran.system.repository.ObjectsManagerDriver.ObjectsManagerDriverListener;
@@ -44,6 +48,7 @@ public class PluginInstaller
 			installDefaultMenus();
 			installWidgets();
 			installSecurityConfig();
+			installI18n();
 			return null;
 		});
 	}
@@ -51,6 +56,7 @@ public class PluginInstaller
 	@Override
 	public void uninstall() throws Throwable {
 		ContextSystemSecurityCheck.doPrivileged(()->{
+			uninstallI18n();
 			uninstallDefaultMenus();
 			uninstallWidget();
 			uninstallSecurityConfig();
@@ -58,6 +64,16 @@ public class PluginInstaller
 		});
 	}
 
+	private void installI18n() throws VfsException, IOException, ReflectiveOperationException {
+		Plugini18nManager pi18n = EntityContextPlugin.getEntity(Plugini18nManager.class);
+		pi18n.registerLanguages();
+	}
+	
+	private void uninstallI18n() throws VfsException, IOException, ReflectiveOperationException {
+		Plugini18nManager pi18n = EntityContextPlugin.getEntity(Plugini18nManager.class);
+		pi18n.unregisterLanguages();
+	}
+	
 	private void installDefaultMenus() {
 		this.defaultAdminMenuListener = new DefaultAdminMenuListener();
 		this.defaultFrontMenuListener = new DefaultFrontMenuListener();
