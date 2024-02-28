@@ -13,7 +13,7 @@ public class ApplicationCreatorBootstrap {
 		System.setProperty("system.security.print", "true");
 		System.setProperty("system.security.debug", "error");
 		ApplicationStart.main(vars); 
-		
+
 	}
 	
 }
