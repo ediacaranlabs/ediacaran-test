@@ -323,16 +323,15 @@ public class PluginInstaller
 		
 		objectsManager.removeListener(MenubarObjectsManagerDriver.DRIVER_NAME, this.defaultAdminMenuListener);
 		
-		/*
+		
 		MenuBar leftMenu = (MenuBar) objectsManager.getObject(MenubarObjectsManagerDriver.DRIVER_NAME + ADMIN_MENU_BAR_PATH + "/" + ADMIN_MENU_BAR);
 		MenuBar topMenu = (MenuBar) objectsManager.getObject(MenubarObjectsManagerDriver.DRIVER_NAME + ADMIN_MENU_BAR_PATH + "/" + ADMIN_TOP_MENU_BAR);
 		uninstallDefaultMenu(leftMenu);
 		uninstallDefaultTopMenu(topMenu);
-		*/
+		
 		
 		objectsManager.removeListener(MenubarObjectsManagerDriver.DRIVER_NAME, this.defaultFrontMenuListener);
 
-		/*
 		MenuBar frontTopMenu = (MenuBar) objectsManager.getObject(MenubarObjectsManagerDriver.DRIVER_NAME + FRONT_MENU_BAR_PATH + "/" + FRONT_MENU_BAR);
 		MenuBar frontFooterMenu = (MenuBar) objectsManager.getObject(MenubarObjectsManagerDriver.DRIVER_NAME + FRONT_MENU_BAR_PATH + "/" + FRONT_FOOTER_MENU_BAR);
 		MenuBar frontFooter2Menu = (MenuBar) objectsManager.getObject(MenubarObjectsManagerDriver.DRIVER_NAME + FRONT_MENU_BAR_PATH + "/" + FRONT_FOOTER2_MENU_BAR);
@@ -340,7 +339,6 @@ public class PluginInstaller
 		uninstallFrontDefaultMenu(frontTopMenu);
 		uninstallFrontFooterDefaultMenu(frontFooterMenu);
 		uninstallFrontFooter2DefaultMenu(frontFooter2Menu);
-		*/
 		
 	}
 	
