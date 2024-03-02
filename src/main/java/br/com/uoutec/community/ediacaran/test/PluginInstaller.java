@@ -425,34 +425,34 @@ public class PluginInstaller
 
 	
 	public class DefaultFrontMenuListener 
-	implements ObjectsManagerDriverListener		 {
+		implements ObjectsManagerDriverListener {
 
-	public void afterLoad(ObjectMetadata omd, ObjectValue obj) {
-		
-		if(obj == null) {
-			return;
-		}
-
-		PathMetadata pmd = omd.getPathMetadata();
-		
-		if(obj.getObject() instanceof MenuBar && pmd.getPath().equals(FRONT_MENU_BAR_PATH)) {
+		public void afterLoad(ObjectMetadata omd, ObjectValue obj) {
 			
-			if(pmd.getId().equals(FRONT_MENU_BAR)) {
-				installFrontDefaultMenu((MenuBar)obj.getObject());
+			if(obj == null) {
+				return;
 			}
-			else
-			if(pmd.getId().equals(FRONT_FOOTER_MENU_BAR)) {
-				installFrontFooterDefaultMenu((MenuBar)obj.getObject());
-			}
-			else
-			if(pmd.getId().equals(FRONT_FOOTER2_MENU_BAR)) {
-				installFrontFooter2DefaultMenu((MenuBar)obj.getObject());
-			}
-			
-		}
-		
-	}
 	
-}
+			PathMetadata pmd = omd.getPathMetadata();
+			
+			if(obj.getObject() instanceof MenuBar && pmd.getPath().equals(FRONT_MENU_BAR_PATH)) {
+				
+				if(pmd.getId().equals(FRONT_MENU_BAR)) {
+					installFrontDefaultMenu((MenuBar)obj.getObject());
+				}
+				else
+				if(pmd.getId().equals(FRONT_FOOTER_MENU_BAR)) {
+					installFrontFooterDefaultMenu((MenuBar)obj.getObject());
+				}
+				else
+				if(pmd.getId().equals(FRONT_FOOTER2_MENU_BAR)) {
+					installFrontFooter2DefaultMenu((MenuBar)obj.getObject());
+				}
+				
+			}
+			
+		}
+	
+	}
 	
 }
