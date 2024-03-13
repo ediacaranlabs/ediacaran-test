@@ -3,7 +3,6 @@ package br.com.uoutec.community.ediacaran.test;
 import java.io.IOException;
 
 import br.com.uoutec.application.io.VfsException;
-import br.com.uoutec.application.security.ContextSystemSecurityCheck;
 import br.com.uoutec.community.ediacaran.front.objects.MenubarObjectsManagerDriver;
 import br.com.uoutec.community.ediacaran.front.pub.Menu;
 import br.com.uoutec.community.ediacaran.front.pub.MenuBar;
@@ -14,6 +13,7 @@ import br.com.uoutec.community.ediacaran.front.security.pub.WebSecurityManagerPl
 import br.com.uoutec.community.ediacaran.system.i18n.Plugini18nManager;
 import br.com.uoutec.community.ediacaran.system.repository.ObjectMetadata;
 import br.com.uoutec.community.ediacaran.system.repository.ObjectValue;
+import br.com.uoutec.community.ediacaran.system.repository.ObjectsManagerDriver;
 import br.com.uoutec.community.ediacaran.system.repository.ObjectsManagerDriver.ObjectsManagerDriverListener;
 import br.com.uoutec.community.ediacaran.system.repository.ObjectsTemplateManager;
 import br.com.uoutec.community.ediacaran.system.repository.PathMetadata;
@@ -44,24 +44,18 @@ public class PluginInstaller
 	
 	@Override
 	public void install() throws Throwable {
-		ContextSystemSecurityCheck.doPrivileged(()->{
-			installDefaultMenus();
-			installWidgets();
-			installSecurityConfig();
-			installI18n();
-			return null;
-		});
+		installDefaultMenus();
+		installWidgets();
+		installSecurityConfig();
+		installI18n();
 	}
 
 	@Override
 	public void uninstall() throws Throwable {
-		ContextSystemSecurityCheck.doPrivileged(()->{
-			uninstallI18n();
-			uninstallDefaultMenus();
-			uninstallWidget();
-			uninstallSecurityConfig();
-			return null;
-		});
+		uninstallI18n();
+		uninstallDefaultMenus();
+		uninstallWidget();
+		uninstallSecurityConfig();
 	}
 
 	private void installI18n() throws VfsException, IOException, ReflectiveOperationException {
@@ -79,8 +73,12 @@ public class PluginInstaller
 		this.defaultFrontMenuListener = new DefaultFrontMenuListener();
 
 		ObjectsTemplateManager objectsManager = EntityContextPlugin.getEntity(ObjectsTemplateManager.class);
-		objectsManager.addListener(MenubarObjectsManagerDriver.DRIVER_NAME, this.defaultAdminMenuListener);
-		objectsManager.addListener(MenubarObjectsManagerDriver.DRIVER_NAME, this.defaultFrontMenuListener);
+		ObjectsManagerDriver menubarDriver = objectsManager.getDriver(MenubarObjectsManagerDriver.DRIVER_NAME);
+		menubarDriver.addListener(this.defaultAdminMenuListener);
+		menubarDriver.addListener(this.defaultFrontMenuListener);
+		
+		//objectsManager.addListener(MenubarObjectsManagerDriver.DRIVER_NAME, this.defaultAdminMenuListener);
+		//objectsManager.addListener(MenubarObjectsManagerDriver.DRIVER_NAME, this.defaultFrontMenuListener);
 	}
 
 	private void installFrontDefaultMenu(MenuBar menubar) {
@@ -320,8 +318,10 @@ public class PluginInstaller
 
 	private void uninstallDefaultMenus() throws RegistryException {
 		ObjectsTemplateManager objectsManager = EntityContextPlugin.getEntity(ObjectsTemplateManager.class);
+		ObjectsManagerDriver menubarDriver = objectsManager.getDriver(MenubarObjectsManagerDriver.DRIVER_NAME);
 		
-		objectsManager.removeListener(MenubarObjectsManagerDriver.DRIVER_NAME, this.defaultAdminMenuListener);
+		menubarDriver.removeListener(this.defaultAdminMenuListener);
+		//objectsManager.removeListener(MenubarObjectsManagerDriver.DRIVER_NAME, this.defaultAdminMenuListener);
 		
 		
 		MenuBar leftMenu = (MenuBar) objectsManager.getObject(MenubarObjectsManagerDriver.DRIVER_NAME + ADMIN_MENU_BAR_PATH + "/" + ADMIN_MENU_BAR);
@@ -330,7 +330,8 @@ public class PluginInstaller
 		uninstallDefaultTopMenu(topMenu);
 		
 		
-		objectsManager.removeListener(MenubarObjectsManagerDriver.DRIVER_NAME, this.defaultFrontMenuListener);
+		menubarDriver.removeListener(this.defaultFrontMenuListener);
+		//objectsManager.removeListener(MenubarObjectsManagerDriver.DRIVER_NAME, this.defaultFrontMenuListener);
 
 		MenuBar frontTopMenu = (MenuBar) objectsManager.getObject(MenubarObjectsManagerDriver.DRIVER_NAME + FRONT_MENU_BAR_PATH + "/" + FRONT_MENU_BAR);
 		MenuBar frontFooterMenu = (MenuBar) objectsManager.getObject(MenubarObjectsManagerDriver.DRIVER_NAME + FRONT_MENU_BAR_PATH + "/" + FRONT_FOOTER_MENU_BAR);
