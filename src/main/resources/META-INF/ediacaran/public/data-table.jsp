@@ -44,7 +44,13 @@
 				
 				.pagination a {
 				  color: black;
-				  float: left;
+				  /*float: left;*/
+				  padding: 8px 16px;
+				  text-decoration: none;
+				}
+
+				.pagination span {
+				  color: black;
 				  padding: 8px 16px;
 				  text-decoration: none;
 				}
@@ -59,47 +65,124 @@
 				  background-color: #ddd;
 				  border-radius: 5px;
 				}
-				</style>				
-					<ec:form id="testDataTable" method="POST" action="${pageContext.request.contextPath}/data-table/search">
+				</style>
+					<form id="testDataTable" method="POST" action="${pageContext.request.contextPath}/data-table/search">
 					<input type="hidden" name="page" value="1">
 					<input type="hidden" name="resultPerPage" value="10">
-					<ed:row classStyle="dataTableStart">
-						<ed:col size="2">
+					<div class="row dataTableStart">
+						<div class="col-sm-12 col-md-12 col-lg-2 col-xl-2">
 				    		<ec:field-group>
 			    			<ec:textfield name="minID" placeholder="min ID"/>
 			    			<ec:textfield name="maxID" placeholder="max ID"/>
 				    		</ec:field-group>
-						</ed:col>
-						<ed:col size="6">
+						</div>
+						<div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
 			    			<ec:textfield name="name" placeholder="name" />
-						</ed:col>
-						<ed:col size="2">
+						</div>
+						<div class="col-sm-12 col-md-12 col-lg-2 col-xl-2">
 			    			<ec:select name="gender">
-			    				<ec:option value="" ></ec:option>
+			    				<ec:option value=""></ec:option>
 			    				<ec:option value="Male">Male</ec:option>
 			    				<ec:option value="Female">Female</ec:option>
 			    			</ec:select>
-						</ed:col>
-						<ed:col size="2">
-				    			<ec:button actionType="submit" label="Search"/>
-						</ed:col>
-					</ed:row>
-					<ed:row >
-						<ed:col align="center">
-							<div class="pagination">
-							  <a href="#">&laquo;</a>
-							  <a href="#">1</a>
-							  <a href="#">2</a>
-							  <a href="#">|</a>
-							  <a href="#">3</a>
-							  <a href="#">4</a>
-							  <a href="#">&raquo;</a>
-							</div>						
-						</ed:col>
-					</ed:row>
-				    </ec:form>
+						</div>
+						<div class="col-sm-12 col-md-12 col-lg-2 col-xl-2">
+			    			<ec:button actionType="submit" label="Search"/>
+						</div>
+					</div>
+					<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 pagination dataTablePagination">
+					</div>
+				    </form>
 				    <script type="text/javascript">
 				    	$.AppContext.dataTable = {};
+				    	
+				    	$.AppContext.dataTable.applyPages = function($id, $page, $totalPages){
+				    		$( "#" + $id ).find("div[class*=dataTablePagination]").each(function() {
+				    			var $e = $(this);
+				    			$e.html("");
+				    			var $pagesSTR = "";
+				    			
+				    			if($totalPages < $page){
+				    				return;
+				    			}
+				    			
+				    			if($totalPages == null || $totalPages == 0){
+				    			}
+				    			
+				    			if($page <= 3){
+				    				var $i;
+				    				
+				    				for($i=1;$i<=4;$i++){
+
+				    					if($i == $page){
+				    						$e.append($('<a href="#" class="active">' + $i + '</a>'));
+				    					}
+				    					else{
+				    						$e.append($('<a href="#">' + $i + '</a>'));
+				    					}
+
+				    				}
+
+		    						$e.append($('<span>...</span>'));
+				    				
+		    						$e.append($('<a href="#">' + ($totalPages - 3) + '</a>'));
+		    						$e.append($('<a href="#">' + ($totalPages - 2) + '</a>'));
+		    						$e.append($('<a href="#">' + ($totalPages - 1) + '</a>'));
+		    						$e.append($('<a href="#">' + $totalPages + '</a>'));
+				    			}
+				    			else
+				    			if($totalPages - $page < 3){
+				    				var $i;
+				    				
+				    				$e.append($('<a href="#">1</a>'));
+				    				$e.append($('<a href="#">2</a>'));
+				    				$e.append($('<a href="#">3</a>'));
+				    				$e.append($('<a href="#">4</a>'));
+				    				$e.append($('<span>...</span>'));
+		    						
+				    				for($i=$totalPages - 3;$i<=$totalPages;$i++){
+
+				    					if($i == $page){
+				    						$e.append($('<a href="#" class="active">' + $i + '</a>'));
+				    					}
+				    					else{
+				    						$e.append($('<a href="#">' + $i + '</a>'));
+				    					}
+
+				    				}
+				    			}
+				    			else{
+				    				
+				    				$e.append($('<a href="#">1</a>'));
+				    				if($page - 3 != 1){
+				    					$e.append($('<span>...</span>'));
+				    				}
+				    				$e.append($('<a href="#">' + ($page - 2) + '</a>'));
+				    				$e.append($('<a href="#">' + ($page - 1) + '</a>'));
+				    				$e.append($('<a href="#" class="active">' + $page + '</a>'));
+				    				$e.append($('<a href="#">' + ($page + 1) + '</a>'));
+				    				$e.append($('<a href="#">' + ($page + 2) + '</a>'));
+				    				if($page + 3 != $totalPages){
+				    					$e.append($('<span>...</span>'));
+				    				}
+				    				$e.append($('<a href="#">' + $totalPages + '</a>'));
+		    						
+				    			}
+				    			
+				    			//$e.html($pagesSTR);
+				    			
+				    			$e.find("a").each(function() {
+				    				var $lnk = $(this);
+				    				$lnk.click(function(){
+				    					var $p = $(this).text();
+							    		$("#" + $id + " input[name=page]").val($p);
+							    		$("#" + $id).submit();
+							    		$("#" + $id + " input[name=page]").val("1");
+				    				});
+				    			});
+				    			
+				    		});
+				    	};
 				    	
 				    	$.AppContext.dataTable.apply = function($id, $rowTemplate, $colTemplate){
 				    		
@@ -154,6 +237,7 @@
 									    			$e.after($result);
 								    		});
 						    				
+				    					  	$.AppContext.dataTable.applyPages($id, $response.page, $response.maxPages);
 						    			}
 				    			);
 							});				    		
@@ -162,12 +246,12 @@
 				    </script>
 					<script type="text/javascript">
 						$.AppContext.onload(function(){
-							var $dataTableRowTemplate = '<div id="rowtagcomponent_ffffffff8b880ca5" class="row dataTableRow">{{value}}</div>';
+							var $dataTableRowTemplate = '<div class="row dataTableRow">{{value}}</div>';
 							var $dataTableColsTemplate = [
-					    		'<div id="coltagcomponent_ffffffff8b880ca6" class="col-sm-12 col-md-12 col-lg-2 col-xl-2     ">{{value}}</div>',
-					    		'<div id="coltagcomponent_ffffffff8b880ca7" class="col-sm-12 col-md-12 col-lg-6 col-xl-6     ">{{value}}</div>',
-					    		'<div id="coltagcomponent_ffffffff8b880ca8" class="col-sm-12 col-md-12 col-lg-2 col-xl-2     ">{{value}}</div>',
-					    		'<div id="coltagcomponent_ffffffff8b880ca9" class="col-sm-12 col-md-12 col-lg-2 col-xl-2     ">{{value}}</div>'
+					    		'<div class="col-sm-12 col-md-12 col-lg-2 col-xl-2">{{value}}</div>',
+					    		'<div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">{{value}}</div>',
+					    		'<div class="col-sm-12 col-md-12 col-lg-2 col-xl-2">{{value}}</div>',
+					    		'<div class="col-sm-12 col-md-12 col-lg-2 col-xl-2">{{value}}</div>'
 					    	];
 							/*
 					    	var $dataTableRowTemplate = ' <ed:row classStyle="dataTableRow">{{value}}</ed:row>';
