@@ -68,21 +68,39 @@
 				</style>
 				
 				<ec:data-table from="testDataTable" var="item" index="i">
-					<ed:row>
-						<ed:col size="2">
-							#{item.id}
-						</ed:col>
-						<ed:col size="6">
-							#{item.name}
-						</ed:col>
-						<ed:col size="2">
-							#{item.gender}
-						</ed:col>
-						<ed:col size="2">
-							<a href="${pageContext.request.contextPath}/edit/#{item.id}/">Edit</a> |
-							<a href="${pageContext.request.contextPath}/delete/#{item.id}/">Delete</a>
-						</ed:col>
-					</ed:row>
+					<ec:data-table-header>
+					</ec:data-table-header>
+					<ec:data-table-data>
+						<ed:row>
+							<ed:col size="2">
+								<ec:if test="#{item.image != null}">
+									<ec:image src="#{item.img}"/>
+								</ec:if>
+								<ec:if test="#{item.image == null}">
+									<ec:image src="/img/default.png"/>
+								</ec:if>
+								
+								if(item.image != null){
+									out.push("...");
+								}
+								if(item.image == null){
+									out.push("...");
+								}
+								
+								#{item.id}
+							</ed:col>
+							<ed:col size="6">
+								#{item.name}
+							</ed:col>
+							<ed:col size="2">
+								#{item.gender}
+							</ed:col>
+							<ed:col size="2">
+								<a href="${pageContext.request.contextPath}/edit/#{item.id}/">Edit</a> |
+								<a href="${pageContext.request.contextPath}/delete/#{item.id}/">Delete</a>
+							</ed:col>
+						</ed:row>
+					</ec:data-table-data>
 				</ec:data-table>
 				
 					<form id="testDataTable" method="POST" action="${pageContext.request.contextPath}/data-table/search">
@@ -111,6 +129,14 @@
 					</div>
 					<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 pagination dataTablePagination">
 					</div>
+					<script type="text/javascript">
+						$.AppContext.onload(function(){
+							$.AppContext.dataTable.apply({from}, function({var}, {index}){
+								return {content};
+							});
+						});
+					</script>				    
+					
 				    </form>
 				    <script type="text/javascript">
 				    $func = function(obj){
