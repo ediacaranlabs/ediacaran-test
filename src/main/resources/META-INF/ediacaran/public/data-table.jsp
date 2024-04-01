@@ -66,6 +66,25 @@
 				  border-radius: 5px;
 				}
 				</style>
+				
+				<ec:data-table from="testDataTable" var="item" index="i">
+					<ed:row>
+						<ed:col size="2">
+							#{item.id}
+						</ed:col>
+						<ed:col size="6">
+							#{item.name}
+						</ed:col>
+						<ed:col size="2">
+							#{item.gender}
+						</ed:col>
+						<ed:col size="2">
+							<a href="${pageContext.request.contextPath}/edit/#{item.id}/">Edit</a> |
+							<a href="${pageContext.request.contextPath}/delete/#{item.id}/">Delete</a>
+						</ed:col>
+					</ed:row>
+				</ec:data-table>
+				
 					<form id="testDataTable" method="POST" action="${pageContext.request.contextPath}/data-table/search">
 					<input type="hidden" name="page" value="1">
 					<input type="hidden" name="resultPerPage" value="10">
@@ -94,13 +113,31 @@
 					</div>
 				    </form>
 				    <script type="text/javascript">
+				    $func = function(obj){
+				    	var tmp = '<div class="row dataTableRow">' +
+				    	'  <div class="col-sm-12 col-md-12 col-lg-2 col-xl-2">' +
+				    	obj.id +
+				    	'  </div>' +
+				    	'  <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">' +
+				    	obj.name +
+				    	'  </div>' +
+				    	'  <div class="col-sm-12 col-md-12 col-lg-2 col-xl-2">' +
+				    	obj.gender +
+				    	'  </div>' +
+				    	'  <div class="col-sm-12 col-md-12 col-lg-2 col-xl-2">' +
+				    	obj.actions +
+				    	'  </div>' +
+				    	'</div>';
+				    	return tmp;
+				    	}				    
+				    </script>
+				    <script type="text/javascript">
 				    	$.AppContext.dataTable = {};
 				    	
 				    	$.AppContext.dataTable.applyPages = function($id, $page, $totalPages){
 				    		$( "#" + $id ).find("div[class*=dataTablePagination]").each(function() {
 				    			var $e = $(this);
 				    			$e.html("");
-				    			var $pagesSTR = "";
 				    			
 				    			if($totalPages < $page){
 				    				return;
@@ -209,6 +246,8 @@
 					    			$dta.remove();
 					    		});
 						    	
+	    					  	var $dta = $("#" + $id + " div[class*=dataTablePagination]");
+						    	
 						    	$.AppContext.utils.postJson(
 						    			$resource, 
 						    			$request,
@@ -219,6 +258,7 @@
 						    				var $result = "";
 						    				
 						    				for (var $o of $list) {
+						    					/*
 						    					  var $i;
 						    					  var $colsSTR = "";
 						    					  
@@ -230,12 +270,16 @@
 						    					  
 						    					  var $rowSTR = $rowTemplate.replace("{{value}}", $colsSTR);
 						    					  $result += $rowSTR;
+						    					  */
+						    					  var $tag = $func($o);
+						    					  $tag = $($tag);
+						    					  $tag.insertBefore($dta);
 					    					}
 						    				
-				    					  	$dataTableObj.find("div[class*=dataTableStart]").each(function() {
-									    			var $e = $(this);
-									    			$e.after($result);
-								    		});
+				    					  	//$dataTableObj.find("div[class*=dataTableStart]").each(function() {
+									    	//		var $e = $(this);
+									    	//		$e.after($result);
+								    		//});
 						    				
 				    					  	$.AppContext.dataTable.applyPages($id, $response.page, $response.maxPages);
 						    			}
@@ -244,6 +288,7 @@
 				    		
 				    	};
 				    </script>
+				    
 					<script type="text/javascript">
 						$.AppContext.onload(function(){
 							var $dataTableRowTemplate = '<div class="row dataTableRow">{{value}}</div>';
@@ -253,16 +298,6 @@
 					    		'<div class="col-sm-12 col-md-12 col-lg-2 col-xl-2">{{value}}</div>',
 					    		'<div class="col-sm-12 col-md-12 col-lg-2 col-xl-2">{{value}}</div>'
 					    	];
-							/*
-					    	var $dataTableRowTemplate = ' <ed:row classStyle="dataTableRow">{{value}}</ed:row>';
-					    	var $dataTableColsTemplate = [
-					    		'<ed:col size="2">{{value}}</ed:col>',
-					    		'<ed:col size="6">{{value}}</ed:col>',
-					    		'<ed:col size="2">{{value}}</ed:col>',
-					    		'<ed:col size="2">{{value}}</ed:col>'
-					    	];
-							*/
-							
 							$.AppContext.dataTable.apply("testDataTable", $dataTableRowTemplate, $dataTableColsTemplate);
 						});
 					</script>				    
