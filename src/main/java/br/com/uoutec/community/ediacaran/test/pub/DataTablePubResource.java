@@ -10,7 +10,6 @@ import javax.inject.Singleton;
 
 import org.brandao.brutos.annotation.AcceptRequestType;
 import org.brandao.brutos.annotation.Action;
-import org.brandao.brutos.annotation.Basic;
 import org.brandao.brutos.annotation.Controller;
 import org.brandao.brutos.annotation.DetachedName;
 import org.brandao.brutos.annotation.ResponseType;

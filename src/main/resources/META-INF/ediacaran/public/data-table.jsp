@@ -66,6 +66,26 @@
 				  border-radius: 5px;
 				}
 				</style>
+
+				<ec:data-table from="testDataTable" var="response" index="i">
+					<ec:foreach items="#{response.data}" var="item">
+						<ed:row>
+							<ed:col size="2">
+								#{item.id}
+							</ed:col>
+							<ed:col size="6">
+								#{item.name}
+							</ed:col>
+							<ed:col size="2">
+								#{item.gender}
+							</ed:col>
+							<ed:col size="2">
+								<a href="${pageContext.request.contextPath}/edit/#{item.id}/">Edit</a> |
+								<a href="${pageContext.request.contextPath}/delete/#{item.id}/">Delete</a>
+							</ed:col>
+						</ed:row>
+					</ec:foreach>
+				</ec:data-table>
 				
 				<ec:data-table from="testDataTable" var="item" index="i">
 					<ec:data-table-header>
@@ -73,20 +93,6 @@
 					<ec:data-table-data>
 						<ed:row>
 							<ed:col size="2">
-								<ec:if test="#{item.image != null}">
-									<ec:image src="#{item.img}"/>
-								</ec:if>
-								<ec:if test="#{item.image == null}">
-									<ec:image src="/img/default.png"/>
-								</ec:if>
-								
-								if(item.image != null){
-									out.push("...");
-								}
-								if(item.image == null){
-									out.push("...");
-								}
-								
 								#{item.id}
 							</ed:col>
 							<ed:col size="6">
