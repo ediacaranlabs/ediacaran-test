@@ -36,6 +36,27 @@
 				    <script type="text/javascript">
 				    	$.AppContext.dataTable = {};
 				    	
+				    	$.AppContext.dataTable.getDataTable = function ($target){
+							
+							if($target.getProperty('draggable')){
+								return $target;
+							}
+							
+							var i = 0;
+					
+							while($target !== 'undefined' && i < 1000 ){
+								
+								if($target.getProperty('data-table')){
+									return $target;
+								}
+								
+								$target = $target.getParent();
+								i = i + 1;
+							}
+							
+							return null;
+						};
+				    	
 				    	$.AppContext.dataTable.applyPages = function($id, $page, $totalPages){
 				    		$( "#" + $id ).find("div[class*=dataTablePagination]").each(function() {
 				    			var $e = $(this);
@@ -46,8 +67,24 @@
 				    			}
 				    			
 				    			if($totalPages == null || $totalPages == 0){
+				    				return;
 				    			}
 				    			
+				    			if($totalPages <= 10){
+				    				
+				    				for($i=1;$i<$totalPages;$i++){
+
+				    					if($i == $page){
+				    						$e.append($('<a href="#" class="active">' + $i + '</a>'));
+				    					}
+				    					else{
+				    						$e.append($('<a href="#">' + $i + '</a>'));
+				    					}
+
+				    				}
+				    				
+				    			}
+				    			else
 				    			if($page <= 3){
 				    				var $i;
 				    				
@@ -107,8 +144,6 @@
 				    				$e.append($('<a href="#">' + $totalPages + '</a>'));
 		    						
 				    			}
-				    			
-				    			//$e.html($pagesSTR);
 				    			
 				    			$e.find("a").each(function() {
 				    				var $lnk = $(this);
@@ -203,6 +238,10 @@
 					  background-color: #ddd;
 					  border-radius: 5px;
 					}
+					
+					.result-box {
+						width: 120px;
+					}
 					</style>
 
 					<ec:data-table action="${pageContext.request.contextPath}/data-table/search">
@@ -248,65 +287,49 @@
 						</ec:data-result>
 					</ec:data-table>
 					
-					<%--
-					<form id="testDataTable" method="POST" action="${pageContext.request.contextPath}/data-table/search">
-						<input type="hidden" name="page" value="1">
-						<input type="hidden" name="resultPerPage" value="10">
-						<div class="row dataTableStart">
-							<div class="col-sm-12 col-md-12 col-lg-2 col-xl-2">
+					<hr>
+					<ec:data-table id="dataTable2" action="${pageContext.request.contextPath}/data-table/search">
+						<ed:row>
+							<ed:col size="2">
 					    		<ec:field-group>
 				    			<ec:textfield name="minID" placeholder="min ID"/>
 				    			<ec:textfield name="maxID" placeholder="max ID"/>
 					    		</ec:field-group>
-							</div>
-							<div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+							</ed:col>
+							<ed:col size="6">
 				    			<ec:textfield name="name" placeholder="name" />
-							</div>
-							<div class="col-sm-12 col-md-12 col-lg-2 col-xl-2">
+							</ed:col>
+							<ed:col size="2">
 				    			<ec:select name="gender">
 				    				<ec:option value=""></ec:option>
 				    				<ec:option value="Male">Male</ec:option>
 				    				<ec:option value="Female">Female</ec:option>
 				    			</ec:select>
-							</div>
-							<div class="col-sm-12 col-md-12 col-lg-2 col-xl-2">
+							</ed:col>
+							<ed:col size="2">
 				    			<ec:button actionType="submit" label="Search"/>
-							</div>
-						</div>
-						<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 pagination dataTablePagination">
-						</div>
-						<script type="text/javascript">
-							$.AppContext.onload(function(){
-								
-								var $func = function(response){
-									var out_ = [];
-									<ec:jsTemplate>
-										<ec:forEach items="!{response.data}" var="item">
-											<ed:row>
-												<ed:col size="2">
-													!{item.id}
-												</ed:col>
-												<ed:col size="6">
-													!{item.name}
-												</ed:col>
-												<ed:col size="2">
-													!{item.gender}
-												</ed:col>
-												<ed:col size="2">
-													<a href="${pageContext.request.contextPath}/edit/!{item.id}/">Edit</a> |
-													<a href="${pageContext.request.contextPath}/delete/!{item.id}/">Delete</a>
-												</ed:col>
-											</ed:row>
-										</ec:forEach>
-									</ec:jsTemplate>
-									return out_.join("");
-								};
-								
-								$.AppContext.dataTable.apply("testDataTable", $func);
-							});
-						</script>				    
-				    </form>
-				    --%>
+							</ed:col>
+						</ed:row>
+						<ec:data-result var="response" from="dataTable2" >
+						<ed:row>
+							<ec:forEach items="!{response.data}" var="item">
+							<ed:col size="2">
+								<ec:box>
+									<ec:box-header>ID: !{item.id}</ec:box-header>
+									<ec:box-body>
+										<p>!{item.name}</p>
+										<p>!{item.gender}</p>
+									</ec:box-body>
+									<ec:box-footer>
+										<a href="${pageContext.request.contextPath}/edit/!{item.id}/">Edit</a> |
+										<a href="${pageContext.request.contextPath}/delete/!{item.id}/">Delete</a>
+									</ec:box-footer>
+								</ec:box>
+							</ed:col>
+							</ec:forEach>						
+						</ed:row>
+						</ec:data-result>
+					</ec:data-table>
 				</ed:col>
 			</ed:row>
 		</ed:container>
