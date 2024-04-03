@@ -156,6 +156,11 @@
 						    			function ($response){
 						    				var $tag = $template($response);
 											$tag = $($tag);
+											
+											$tag.each(function() {
+												$(this).addClass("dataTableRow");
+											});
+											
 						    				$tag.insertBefore($dta);
 						    				
 				    					  	$.AppContext.dataTable.applyPages($id, $response.page, $response.maxPages);
@@ -232,23 +237,23 @@
 								var $func = function(response){
 									var out_ = [];
 									<ec:jsTemplate>
-										<ec:foreach items="#{response.data}" var="item">
+										<ec:forEach items="!{response.data}" var="item">
 											<ed:row>
 												<ed:col size="2">
-													#{item.id}
+													!{item.id}
 												</ed:col>
 												<ed:col size="6">
-													#{item.name}
+													!{item.name}
 												</ed:col>
 												<ed:col size="2">
-													#{item.gender}
+													!{item.gender}
 												</ed:col>
 												<ed:col size="2">
-													<a href="${pageContext.request.contextPath}/edit/#{item.id}/">Edit</a> |
-													<a href="${pageContext.request.contextPath}/delete/#{item.id}/">Delete</a>
+													<a href="${pageContext.request.contextPath}/edit/!{item.id}/">Edit</a> |
+													<a href="${pageContext.request.contextPath}/delete/!{item.id}/">Delete</a>
 												</ed:col>
 											</ed:row>
-										</ec:foreach>
+										</ec:forEach>
 									</ec:jsTemplate>
 									return out_.join("");
 								};
