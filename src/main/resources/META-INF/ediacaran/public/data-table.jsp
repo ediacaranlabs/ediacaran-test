@@ -178,13 +178,10 @@
 						    	var $data = new FormData($e[0]);
 						    	var $request = Object.fromEntries($data.entries());
 
-						    	$e.find("div[class*=dataTableRow]").each(function() {
-					    			var $dta = $(this);
-					    			$dta.remove();
-					    		});
-						    	
 	    					  	var $dta = $("#" + $id + " div[class*=dataTablePagination]");
 						    	
+	    					  	$dataTableObj.addClass("disabledDiv");
+	    					  	
 						    	$.AppContext.utils.postJson(
 						    			$resource, 
 						    			$request,
@@ -195,10 +192,20 @@
 											$tag.each(function() {
 												$(this).addClass("dataTableRow");
 											});
+
+									    	$e.find("div[class*=dataTableRow]").each(function() {
+								    			var $dta = $(this);
+								    			$dta.remove();
+								    		});
 											
 						    				$tag.insertBefore($dta);
-						    				
+						    				$.AppContext.utils.enableActions($id);
 				    					  	$.AppContext.dataTable.applyPages($id, $response.page, $response.maxPages);
+				    					  	
+				    					  	$dataTableObj.removeClass("disabledDiv");
+						    			},
+						    			function ($response){
+						    				$dataTableObj.removeClass("disabledDiv");
 						    			}
 				    			);
 							});				    		
@@ -239,8 +246,9 @@
 					  border-radius: 5px;
 					}
 					
-					.result-box {
-						width: 120px;
+					.disabledDiv {
+					    pointer-events: none;
+					    opacity: 0.4;
 					}
 					</style>
 
@@ -310,10 +318,10 @@
 				    			<ec:button actionType="submit" label="Search"/>
 							</ed:col>
 						</ed:row>
-						<ec:data-result var="response" from="dataTable2" >
+						<ec:data-result var="response">
 						<ed:row>
 							<ec:forEach items="!{response.data}" var="item">
-							<ed:col size="2">
+							<ed:col size="3">
 								<ec:box>
 									<ec:box-header>ID: !{item.id}</ec:box-header>
 									<ec:box-body>
