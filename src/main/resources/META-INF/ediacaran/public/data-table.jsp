@@ -219,7 +219,7 @@
 				<ed:col size="12">
 					<style>
 					.pagination {
-					  display: inline-block;
+					  /*display: inline-block;*/
 					}
 					
 					.pagination a {
@@ -252,6 +252,12 @@
 					}
 					</style>
 
+					<ed:row>
+						<ed:col size="12">
+							<h3>Datatable row</h3>
+						</ed:col>
+					</ed:row>
+					
 					<ec:data-table action="${pageContext.request.contextPath}/data-table/search">
 						<ed:row>
 							<ed:col size="2">
@@ -295,8 +301,14 @@
 						</ec:data-result>
 					</ec:data-table>
 					
-					<hr>
-					<ec:data-table id="dataTable2" action="${pageContext.request.contextPath}/data-table/search">
+					<ed:row>
+						<ed:col size="12">
+							<h3>Datatable col</h3>
+						</ed:col>
+					</ed:row>
+					
+					
+					<ec:data-table action="${pageContext.request.contextPath}/data-table/search">
 						<ed:row>
 							<ed:col size="2">
 					    		<ec:field-group>
@@ -338,6 +350,59 @@
 						</ed:row>
 						</ec:data-result>
 					</ec:data-table>
+					
+					<ed:row>
+						<ed:col size="12">
+							<h3>Editable datatable</h3>
+						</ed:col>
+					</ed:row>
+					
+					<ec:data-table id="editableDataTable" action="${pageContext.request.contextPath}/data-table/search">
+						<ed:row>
+							<ed:col size="2">
+					    		<ec:field-group>
+				    			<ec:textfield name="minID" placeholder="min ID"/>
+				    			<ec:textfield name="maxID" placeholder="max ID"/>
+					    		</ec:field-group>
+							</ed:col>
+							<ed:col size="6">
+				    			<ec:textfield name="name" placeholder="name" />
+							</ed:col>
+							<ed:col size="2">
+				    			<ec:select name="gender">
+				    				<ec:option value=""></ec:option>
+				    				<ec:option value="Male">Male</ec:option>
+				    				<ec:option value="Female">Female</ec:option>
+				    			</ec:select>
+							</ed:col>
+							<ed:col size="2">
+				    			<ec:button actionType="submit" label="Search"/>
+							</ed:col>
+						</ed:row>
+					</ec:data-table>
+					<ec:data-result from="editableDataTable" var="response">
+						<ec:forEach items="!{response.data}" var="item">
+							<ed:row>
+								<ed:col size="2">
+									!{item.id}
+								</ed:col>
+								<ed:col size="6">
+									<ec:textfield name="name_!{item.id}" value="!{item.name}" />
+								</ed:col>
+								<ed:col size="2">
+					    			<ec:select name="gender_!{item.id}">
+					    				<ec:option value=""></ec:option>
+					    				<ec:option value="Male" selected="!{item.gender == 'Male'}">Male</ec:option>
+					    				<ec:option value="Female" selected="!{item.gender == 'Female'}">Female</ec:option>
+					    			</ec:select>
+								</ed:col>
+								<ed:col size="2">
+									<a href="${pageContext.request.contextPath}/edit/!{item.id}/">Save</a>
+								</ed:col>
+							</ed:row>
+						</ec:forEach>						
+					</ec:data-result>
+					
 				</ed:col>
 			</ed:row>
 		</ed:container>
