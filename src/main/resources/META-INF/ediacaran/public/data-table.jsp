@@ -297,7 +297,7 @@
 										<a href="${pageContext.request.contextPath}/delete/!{item.id}/">Delete</a>
 									</ed:col>
 								</ed:row>
-							</ec:forEach>						
+							</ec:forEach>
 						</ec:data-result>
 					</ec:data-table>
 					
@@ -350,14 +350,16 @@
 						</ed:row>
 						</ec:data-result>
 					</ec:data-table>
-					
+
 					<ed:row>
 						<ed:col size="12">
-							<h3>Editable datatable</h3>
+							<h3>Form result</h3>
 						</ed:col>
 					</ed:row>
 					
-					<ec:data-table id="editableDataTable" action="${pageContext.request.contextPath}/data-table/search">
+					
+					<ec:form method="post" enctype="json" 
+						action="${pageContext.request.contextPath}/data-table/search" update="result">
 						<ed:row>
 							<ed:col size="2">
 					    		<ec:field-group>
@@ -379,30 +381,28 @@
 				    			<ec:button actionType="submit" label="Search"/>
 							</ed:col>
 						</ed:row>
-					</ec:data-table>
-					<ec:data-result from="editableDataTable" var="response">
-						<ec:forEach items="!{response.data}" var="item">
-							<ed:row>
-								<ed:col size="2">
-									!{item.id}
-								</ed:col>
-								<ed:col size="6">
-									<ec:textfield name="name_!{item.id}" value="!{item.name}" />
-								</ed:col>
-								<ed:col size="2">
-					    			<ec:select name="gender_!{item.id}">
-					    				<ec:option value=""></ec:option>
-					    				<ec:option value="Male" selected="!{item.gender == 'Male'}">Male</ec:option>
-					    				<ec:option value="Female" selected="!{item.gender == 'Female'}">Female</ec:option>
-					    			</ec:select>
-								</ed:col>
-								<ed:col size="2">
-									<a href="${pageContext.request.contextPath}/edit/!{item.id}/">Save</a>
-								</ed:col>
-							</ed:row>
-						</ec:forEach>						
-					</ec:data-result>
-					
+					</ec:form>
+					<div id="result">
+						<ec:response to="result" var="response">
+							<ec:forEach items="!{response.data}" var="item">
+								<ed:row>
+									<ed:col size="2">
+										!{item.id}
+									</ed:col>
+									<ed:col size="6">
+										!{item.name}
+									</ed:col>
+									<ed:col size="2">
+										!{item.gender}
+									</ed:col>
+									<ed:col size="2">
+										<a href="${pageContext.request.contextPath}/edit/!{item.id}/">Edit</a> |
+										<a href="${pageContext.request.contextPath}/delete/!{item.id}/">Delete</a>
+									</ed:col>
+								</ed:row>
+							</ec:forEach>
+						</ec:response>
+					</div>
 				</ed:col>
 			</ed:row>
 		</ed:container>
