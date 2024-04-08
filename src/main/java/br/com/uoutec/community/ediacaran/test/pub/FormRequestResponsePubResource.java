@@ -9,6 +9,7 @@ import javax.inject.Singleton;
 
 import org.brandao.brutos.annotation.AcceptRequestType;
 import org.brandao.brutos.annotation.Action;
+import org.brandao.brutos.annotation.Basic;
 import org.brandao.brutos.annotation.Controller;
 import org.brandao.brutos.annotation.DetachedName;
 import org.brandao.brutos.annotation.MappingTypes;
@@ -24,7 +25,7 @@ import br.com.uoutec.community.ediacaran.test.pub.EntityService.ExampleEntity;
 
 @Singleton
 @Controller(value="/form-request-response")
-public class FormJsonJsonPubResource {
+public class FormRequestResponsePubResource {
 
 	@Transient
 	@Inject
@@ -62,6 +63,35 @@ public class FormJsonJsonPubResource {
 		return searchExampleEntity(request);
 	}
 	
+
+	@Action(value="/details/json/{id}")
+	@Result(value="response", mappingType=MappingTypes.VALUE)
+	@ResponseType(MediaTypes.APPLICATION_JSON)
+	public Serializable loadJson(@Basic(bean= "id") Integer id){
+		
+		SearchRequest request = new SearchRequest();
+		request.setMinID(id);
+		request.setMaxID(id);
+		
+		SearchResult<ExampleEntity> result = searchExampleEntity(request);
+		
+		return result.getData().isEmpty()? null : result.getData().get(0);
+	}
+
+	@Action(value="/get/html/{id}")
+	@View(value="/load-html.jsp", resolved=true)
+	@Result(value="response", mappingType=MappingTypes.VALUE)
+	@RequestMethod("POST")
+	public ExampleEntity loadHTML(@Basic(bean= "id") Integer id){
+		
+		SearchRequest request = new SearchRequest();
+		request.setMinID(id);
+		request.setMaxID(id);
+		
+		SearchResult<ExampleEntity> result = searchExampleEntity(request);
+		
+		return result.getData().isEmpty()? null : result.getData().get(0);
+	}
 	
 	@SuppressWarnings("unchecked")
 	private synchronized SearchResult<ExampleEntity> searchExampleEntity(
