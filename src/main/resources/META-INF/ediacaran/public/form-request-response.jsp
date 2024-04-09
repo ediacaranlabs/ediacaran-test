@@ -90,6 +90,7 @@
 								</ed:col>
 							</ed:row>
 						</ec:forEach>
+
 						<ec:response to="details" var="item">
 							<ec:modal-header>
 								<h4 class="modal-title">!{item.name}</h4>
@@ -134,7 +135,6 @@
 						</ec:response>
 						
 					</ec:response>
-					
 					<ed:row>
 						<ed:col size="12">
 							<h3>JSON Request and HTML response</h3>
