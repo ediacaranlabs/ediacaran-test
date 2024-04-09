@@ -14,8 +14,8 @@
 			${item.gender}
 		</ed:col>
 		<ed:col size="2">
-			<a href="${pageContext.request.contextPath}/edit/${item.id}/">Edit</a> |
-			<a href="${pageContext.request.contextPath}/delete/${item.id}/">Delete</a>
+			<a href="#m${pageContext.request.contextPath}/form-request-response/details/html/${item.id}">
+			Show</a>
 		</ed:col>
 	</ed:row>
 </c:forEach>

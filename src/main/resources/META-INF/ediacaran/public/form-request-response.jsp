@@ -214,11 +214,56 @@
 									!{item.gender}
 								</ed:col>
 								<ed:col size="2">
-									<a href="${pageContext.request.contextPath}/edit/!{item.id}/">Edit</a> |
-									<a href="${pageContext.request.contextPath}/delete/!{item.id}/">Delete</a>
+									<a href="#m${pageContext.request.contextPath}/form-request-response/details/json/!{item.id}"
+									dest-content="details3">
+									Show</a>
 								</ed:col>
 							</ed:row>
 						</ec:forEach>
+						
+						<ec:response to="details3" var="item">
+							<ec:modal-header>
+								<h4 class="modal-title">!{item.name} (Details3)</h4>
+							</ec:modal-header>
+							<ec:modal-body>
+									<ed:row>
+										<ed:col size="12">
+											<ed:row>
+												<ed:col size="2">
+													<b>ID:</b>
+												</ed:col>
+												<ed:col size="10">
+													!{item.id}
+												</ed:col>
+											</ed:row>
+											<ed:row>
+												<ed:col size="2">
+													<b>Name:</b>
+												</ed:col>
+												<ed:col size="10">
+													!{item.name}
+												</ed:col>
+											</ed:row>
+											<ed:row>
+												<ed:col size="2">
+													<b>Gender:</b>
+												</ed:col>
+												<ed:col size="10">
+													!{item.gender}
+												</ed:col>
+											</ed:row>
+										</ed:col>
+									</ed:row>
+							</ec:modal-body>
+							<ec:modal-footer>
+								<ec:button label="Close" actionType="button">
+									<ec:event type="click">
+										$.AppContext.dialog.close();
+									</ec:event>
+								</ec:button>
+							</ec:modal-footer>
+						</ec:response>
+												
 					</ec:response>
 									
 					<ed:row>
