@@ -62,7 +62,6 @@ public class FormRequestResponsePubResource {
 	public synchronized Serializable searchURLencodedHTML(@DetachedName SearchRequest request){
 		return searchExampleEntity(request);
 	}
-	
 
 	@Action(value="/details/json/{id}")
 	@Result(value="response", mappingType=MappingTypes.VALUE)
@@ -78,10 +77,9 @@ public class FormRequestResponsePubResource {
 		return result.getData().isEmpty()? null : result.getData().get(0);
 	}
 
-	@Action(value="/get/html/{id}")
+	@Action(value="/details/html/{id}")
 	@View(value="/load-html.jsp", resolved=true)
-	@Result(value="response", mappingType=MappingTypes.VALUE)
-	@RequestMethod("POST")
+	@Result(value="item", mappingType=MappingTypes.VALUE)
 	public ExampleEntity loadHTML(@Basic(bean= "id") Integer id){
 		
 		SearchRequest request = new SearchRequest();
