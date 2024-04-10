@@ -109,6 +109,11 @@ public class PluginInstaller
 			.setName("Gráficos Flot")
 			.setResource("/flot.jsp");
 
+		menu
+			.addItem("resquest_response")
+			.setName("Response template")
+			.setResource("/form-request-response.jsp");
+		
 		menu = menubar
 			.addMenu("pages")
 				.setName("Páginas");
@@ -215,6 +220,12 @@ public class PluginInstaller
 			.setName("Flot Charts")
 			.setIcon("pie-chart")
 			.setResource("#!/admin/flotcharts.jsp")
+			.setOrder(1);
+		
+		leftMenu.addMenu("resquest_response")
+			.setName("Response Template")
+			.setIcon("pie-chart")
+			.setResource("#!/admin/form-request-response.jsp")
 			.setOrder(1);
 		
 		Menu menu = leftMenu.addMenu("menu")

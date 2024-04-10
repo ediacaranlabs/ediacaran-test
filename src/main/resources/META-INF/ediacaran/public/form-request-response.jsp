@@ -135,6 +135,7 @@
 						</ec:response>
 						
 					</ec:response>
+					
 					<ed:row>
 						<ed:col size="12">
 							<h3>JSON Request and HTML response</h3>
