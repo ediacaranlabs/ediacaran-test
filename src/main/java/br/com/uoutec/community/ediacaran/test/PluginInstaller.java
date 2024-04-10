@@ -113,6 +113,11 @@ public class PluginInstaller
 			.addItem("resquest_response")
 			.setName("Response template")
 			.setResource("/form-request-response.jsp");
+
+		menu
+			.addItem("datatable")
+			.setName("Data table")
+			.setResource("/data-table.jsp");
 		
 		menu = menubar
 			.addMenu("pages")
@@ -226,6 +231,12 @@ public class PluginInstaller
 			.setName("Response Template")
 			.setIcon("pie-chart")
 			.setResource("#!/admin/form-request-response.jsp")
+			.setOrder(1);
+
+		leftMenu.addMenu("datatable")
+			.setName("Data table")
+			.setIcon("pie-chart")
+			.setResource("#!/admin/data-table.jsp")
 			.setOrder(1);
 		
 		Menu menu = leftMenu.addMenu("menu")
