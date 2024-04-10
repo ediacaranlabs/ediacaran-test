@@ -20,9 +20,6 @@ import org.brandao.brutos.annotation.View;
 import org.brandao.brutos.annotation.web.MediaTypes;
 import org.brandao.brutos.annotation.web.RequestMethod;
 
-import br.com.uoutec.community.ediacaran.test.pub.EntityService.EntityResult;
-import br.com.uoutec.community.ediacaran.test.pub.EntityService.ExampleEntity;
-
 @Singleton
 @Controller(value="/form-request-response")
 public class FormRequestResponsePubResource {
@@ -134,118 +131,11 @@ public class FormRequestResponsePubResource {
 		return new SearchResult<ExampleEntity>(
 				maxPages, 
 				page, 
+				false,
 				firstResult > list.size()? 
 						Collections.EMPTY_LIST :
 						list.subList(firstResult, lastResult > list.size()? list.size() : lastResult)
 		);
 	}
 	
-	public static class SearchRequest implements Serializable {
-	
-		private static final long serialVersionUID = 2549319270886774890L;
-
-		private Integer minID;
-
-		private Integer maxID;
-		
-		private String name;
-		
-		private String gender;
-
-		private Integer page;
-		
-		private Integer resultPerPage;
-		
-		public Integer getMinID() {
-			return minID;
-		}
-
-		public void setMinID(Integer minID) {
-			this.minID = minID;
-		}
-
-		public Integer getMaxID() {
-			return maxID;
-		}
-
-		public void setMaxID(Integer maxID) {
-			this.maxID = maxID;
-		}
-
-		public String getName() {
-			return name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getGender() {
-			return gender;
-		}
-
-		public void setGender(String gender) {
-			this.gender = gender;
-		}
-
-		public Integer getPage() {
-			return page;
-		}
-
-		public void setPage(Integer page) {
-			this.page = page;
-		}
-
-		public Integer getResultPerPage() {
-			return resultPerPage;
-		}
-
-		public void setResultPerPage(Integer resultPerPage) {
-			this.resultPerPage = resultPerPage;
-		}
-		
-	}
-	
-	public static class SearchResult<T> implements Serializable {
-		
-		private static final long serialVersionUID = 8112064051350456421L;
-
-		private int maxPages;
-		
-		private int page;
-		
-		private List<T> data;
-
-		public SearchResult(int maxPages, int page, List<T> data) {
-			super();
-			this.maxPages = maxPages;
-			this.page = page;
-			this.data = data;
-		}
-
-		public int getMaxPages() {
-			return maxPages;
-		}
-
-		public void setMaxPages(int maxPages) {
-			this.maxPages = maxPages;
-		}
-
-		public int getPage() {
-			return page;
-		}
-
-		public void setPage(int page) {
-			this.page = page;
-		}
-
-		public List<T> getData() {
-			return data;
-		}
-
-		public void setData(List<T> data) {
-			this.data = data;
-		}
-		
-	}
 }

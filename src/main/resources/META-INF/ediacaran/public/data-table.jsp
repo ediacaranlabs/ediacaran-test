@@ -36,40 +36,26 @@
 				    <script type="text/javascript">
 				    	$.AppContext.dataTable = {};
 				    	
-				    	$.AppContext.dataTable.getDataTable = function ($target){
-							
-							if($target.getProperty('draggable')){
-								return $target;
-							}
-							
-							var i = 0;
-					
-							while($target !== 'undefined' && i < 1000 ){
-								
-								if($target.getProperty('data-table')){
-									return $target;
-								}
-								
-								$target = $target.getParent();
-								i = i + 1;
-							}
-							
-							return null;
-						};
-				    	
-				    	$.AppContext.dataTable.applyPages = function($id, $page, $totalPages){
+				    	$.AppContext.dataTable.applyPages = function($id, $page, $totalPages, $hasNextPage = false){
 				    		$( "#" + $id ).find("div[class*=dataTablePagination]").each(function() {
 				    			var $e = $(this);
-				    			$e.html("");
 				    			
+				    			$e.html("");
+
+				    			if($totalPages < 0){
+	    							$e.append($('<a href="#" class="' + ($page <= 1? 'deactive' : '') + ' back-page">&laquo;</a>'));
+				    				$e.append($('<span>...</span>'));
+	    							$e.append($('<a href="#" class="' + (!$hasNextPage? 'deactive' : '') + ' next-page">&raquo;</a>'));
+				    			}
+				    			else
 				    			if($totalPages < $page){
 				    				return;
 				    			}
-				    			
+				    			else
 				    			if($totalPages == null || $totalPages == 0){
 				    				return;
 				    			}
-				    			
+				    			else
 				    			if($totalPages <= 10){
 				    				
 				    				for($i=1;$i<$totalPages;$i++){
@@ -148,10 +134,28 @@
 				    			$e.find("a").each(function() {
 				    				var $lnk = $(this);
 				    				$lnk.click(function(){
-				    					var $p = $(this).text();
-							    		$("#" + $id + " input[name=page]").val($p);
+				    					var $p = $(this).html();
+
+				    					if($(this).hasClass("back-page")){
+				    						var $pageVal = parseInt($("#" + $id + " input[name=page]").val()) - 1;
+				    						if($pageVal <= 1){
+				    							$("#" + $id + " input[name=page]").val("1");	
+				    						}
+				    						else{
+			    								$("#" + $id + " input[name=page]").val($pageVal);
+				    						}
+				    					}
+				    					else
+				    					if($(this).hasClass("next-page")){
+				    						var $pageVal = parseInt($("#" + $id + " input[name=page]").val()) + 1;
+		    								$("#" + $id + " input[name=page]").val($pageVal);
+				    					}
+				    					else{
+								    		$("#" + $id + " input[name=page]").val($p);
+				    					}
+				    					
 							    		$("#" + $id).submit();
-							    		$("#" + $id + " input[name=page]").val("1");
+				    					
 				    				});
 				    			});
 				    			
@@ -165,6 +169,9 @@
 				    		$dataTableObj.find("button[type=submit]").each(function() {
 				    			var $e = $(this);
 				    			$e.off("click");
+				    			$e.click(function(){
+					    			$("#" + $id + " input[name=page]").val("1");
+				    			})
 				    		});
 
 				    		$($dataTableObj).removeAttr('onsubmit');
@@ -200,12 +207,16 @@
 											
 						    				$tag.insertBefore($dta);
 						    				$.AppContext.utils.enableActions($id);
-				    					  	$.AppContext.dataTable.applyPages($id, $response.page, $response.maxPages);
+				    					  	$.AppContext.dataTable.applyPages(
+				    					  			$id, 
+				    					  			$response.page, 
+				    					  			$response.maxPages,
+				    					  			$response.hasNextPage);
 				    					  	
-				    					  	$dataTableObj.removeClass("disabledDiv");
+				    					  	$dataTableObj.removeClass("disabled");
 						    			},
 						    			function ($response){
-						    				$dataTableObj.removeClass("disabledDiv");
+						    				$dataTableObj.removeClass("disabled");
 						    			}
 				    			);
 							});				    		
@@ -217,41 +228,6 @@
 		<ed:container>
 			<ed:row>
 				<ed:col size="12">
-					<style>
-					.pagination {
-					  /*display: inline-block;*/
-					}
-					
-					.pagination a {
-					  color: black;
-					  /*float: left;*/
-					  padding: 8px 16px;
-					  text-decoration: none;
-					}
-	
-					.pagination span {
-					  color: black;
-					  padding: 8px 16px;
-					  text-decoration: none;
-					}
-					
-					.pagination a.active {
-					  background-color: #4CAF50;
-					  color: white;
-					  border-radius: 5px;
-					}
-					
-					.pagination a:hover:not(.active) {
-					  background-color: #ddd;
-					  border-radius: 5px;
-					}
-					
-					.disabledDiv {
-					    pointer-events: none;
-					    opacity: 0.4;
-					}
-					</style>
-
 					<ed:row>
 						<ed:col size="12">
 							<h3>Datatable row</h3>
@@ -353,13 +329,12 @@
 
 					<ed:row>
 						<ed:col size="12">
-							<h3>Form result</h3>
+							<h3>Datatable Unknown Pages</h3>
 						</ed:col>
 					</ed:row>
 					
 					
-					<ec:form method="post" enctype="json" 
-						action="${pageContext.request.contextPath}/data-table/search" update="result">
+					<ec:data-table action="${pageContext.request.contextPath}/data-table/search-unknown-pages">
 						<ed:row>
 							<ed:col size="2">
 					    		<ec:field-group>
@@ -381,28 +356,26 @@
 				    			<ec:button actionType="submit" label="Search"/>
 							</ed:col>
 						</ed:row>
-					</ec:form>
-					<div id="result">
-						<ec:response to="result" var="response">
+						<ec:data-result var="response">
+						<ed:row>
 							<ec:forEach items="!{response.data}" var="item">
-								<ed:row>
-									<ed:col size="2">
-										!{item.id}
-									</ed:col>
-									<ed:col size="6">
-										!{item.name}
-									</ed:col>
-									<ed:col size="2">
-										!{item.gender}
-									</ed:col>
-									<ed:col size="2">
+							<ed:col size="3">
+								<ec:box>
+									<ec:box-header>ID: !{item.id}</ec:box-header>
+									<ec:box-body>
+										<p>!{item.name}</p>
+										<p>!{item.gender}</p>
+									</ec:box-body>
+									<ec:box-footer>
 										<a href="${pageContext.request.contextPath}/edit/!{item.id}/">Edit</a> |
 										<a href="${pageContext.request.contextPath}/delete/!{item.id}/">Delete</a>
-									</ed:col>
-								</ed:row>
-							</ec:forEach>
-						</ec:response>
-					</div>
+									</ec:box-footer>
+								</ec:box>
+							</ed:col>
+							</ec:forEach>						
+						</ed:row>
+						</ec:data-result>
+					</ec:data-table>
 				</ed:col>
 			</ed:row>
 		</ed:container>
