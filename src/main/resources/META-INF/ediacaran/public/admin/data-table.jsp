@@ -56,7 +56,8 @@
 							!{item.gender}
 						</ed:col>
 						<ed:col size="2">
-							Show
+							<a href="#m${pageContext.request.contextPath}/form-request-response/details/json/!{item.id}"
+								dest-content="details">Show</a>
 						</ed:col>
 					</ed:row>
 				</ec:forEach>
@@ -101,7 +102,8 @@
 							<p>!{item.gender}</p>
 						</ec:box-body>
 						<ec:box-footer>
-							Show
+							<a href="#m${pageContext.request.contextPath}/form-request-response/details/json/!{item.id}"
+								dest-content="details">Show</a>
 						</ec:box-footer>
 					</ec:box>
 				</ed:col>
@@ -148,7 +150,8 @@
 							<p>!{item.gender}</p>
 						</ec:box-body>
 						<ec:box-footer>
-							Show
+							<a href="#m${pageContext.request.contextPath}/form-request-response/details/json/!{item.id}"
+								dest-content="details">Show</a>
 						</ec:box-footer>
 					</ec:box>
 				</ed:col>
@@ -158,3 +161,46 @@
 		</ec:data-table>	
 	</ec:box-body>
 </ec:box>
+
+<ec:response to="details" var="item">
+	<ec:modal-header>
+		<h4 class="modal-title">!{item.name}</h4>
+	</ec:modal-header>
+	<ec:modal-body>
+			<ed:row>
+				<ed:col size="12">
+					<ed:row>
+						<ed:col size="2">
+							<b>ID:</b>
+						</ed:col>
+						<ed:col size="10">
+							!{item.id}
+						</ed:col>
+					</ed:row>
+					<ed:row>
+						<ed:col size="2">
+							<b>Name:</b>
+						</ed:col>
+						<ed:col size="10">
+							!{item.name}
+						</ed:col>
+					</ed:row>
+					<ed:row>
+						<ed:col size="2">
+							<b>Gender:</b>
+						</ed:col>
+						<ed:col size="10">
+							!{item.gender}
+						</ed:col>
+					</ed:row>
+				</ed:col>
+			</ed:row>
+	</ec:modal-body>
+	<ec:modal-footer>
+		<ec:button label="Close" actionType="button">
+			<ec:event type="click">
+				$.AppContext.dialog.close();
+			</ec:event>
+		</ec:button>
+	</ec:modal-footer>
+</ec:response>
