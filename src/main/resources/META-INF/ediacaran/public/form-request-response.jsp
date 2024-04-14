@@ -85,8 +85,7 @@
 								</ed:col>
 								<ed:col size="2">
 									<a href="#m${pageContext.request.contextPath}/form-request-response/details/json/!{item.id}"
-									dest-content="details">
-									Show</a>
+									dest-content="details">Show</a>
 								</ed:col>
 							</ed:row>
 						</ec:forEach>
