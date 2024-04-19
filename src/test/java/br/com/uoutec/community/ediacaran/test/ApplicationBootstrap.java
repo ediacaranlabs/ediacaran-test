@@ -1,11 +1,11 @@
 package br.com.uoutec.community.ediacaran.test;
 
-import br.com.uoutec.ediacaran.core.ApplicationStart;
+import br.com.uoutec.ediacaran.core.ApplicationDebugStart;
 
 public class ApplicationBootstrap {
 	
 	public static void main(String[] vars) {
-		ApplicationStart.main(vars); 
+		ApplicationDebugStart.main(vars); 
 	}
 	
 }
