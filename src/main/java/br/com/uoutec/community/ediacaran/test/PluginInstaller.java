@@ -2,6 +2,7 @@ package br.com.uoutec.community.ediacaran.test;
 
 import java.io.IOException;
 
+import br.com.uoutec.application.SystemProperties;
 import br.com.uoutec.application.io.VfsException;
 import br.com.uoutec.community.ediacaran.front.objects.MenubarObjectsManagerDriver;
 import br.com.uoutec.community.ediacaran.front.pub.Menu;
@@ -18,8 +19,11 @@ import br.com.uoutec.community.ediacaran.system.repository.ObjectsManagerDriver;
 import br.com.uoutec.community.ediacaran.system.repository.ObjectsManagerDriver.ObjectsManagerDriverListener;
 import br.com.uoutec.community.ediacaran.system.repository.ObjectsTemplateManager;
 import br.com.uoutec.community.ediacaran.system.repository.PathMetadata;
+import br.com.uoutec.ediacaran.AbstractWebServerBootstrap;
 import br.com.uoutec.ediacaran.core.AbstractPlugin;
 import br.com.uoutec.ediacaran.core.plugins.EntityContextPlugin;
+import br.com.uoutec.ediacaran.core.plugins.PluginType;
+import br.com.uoutec.ediacaran.web.tomcat.TomcatUtils;
 import br.com.uoutec.entity.registry.RegistryException;
 
 public class PluginInstaller 
@@ -45,6 +49,7 @@ public class PluginInstaller
 	
 	@Override
 	public void install() throws Throwable {
+		installRootPath();
 		installDefaultMenus();
 		installWidgets();
 		installSecurityConfig();
@@ -57,8 +62,18 @@ public class PluginInstaller
 		uninstallDefaultMenus();
 		uninstallWidget();
 		uninstallSecurityConfig();
+		uninstallRootPath();
 	}
 
+	private void installRootPath() {
+		PluginType pluginType = EntityContextPlugin.getEntity(PluginType.class);
+		SystemProperties.setProperty("app.web", TomcatUtils.getPublicPath(pluginType.getConfiguration().getMetadata()).getAbsolutePath().getFullName());
+	}
+
+	private void uninstallRootPath() {
+		SystemProperties.setProperty("app.web", SystemProperties.getProperty("app.base") + AbstractWebServerBootstrap.WEBAPP_PATH);
+	}
+	
 	private void installI18n() throws VfsException, IOException, ReflectiveOperationException {
 		Plugini18nManager pi18n = EntityContextPlugin.getEntity(Plugini18nManager.class);
 		pi18n.registerLanguages();
