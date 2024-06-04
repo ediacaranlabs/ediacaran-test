@@ -4,7 +4,9 @@ import java.io.IOException;
 
 import br.com.uoutec.application.SystemProperties;
 import br.com.uoutec.application.io.VfsException;
+import br.com.uoutec.application.security.FileSecurityPermissionActions;
 import br.com.uoutec.community.ediacaran.front.objects.MenubarObjectsManagerDriver;
+import br.com.uoutec.community.ediacaran.front.objects.PagesObjectsManagerDriver;
 import br.com.uoutec.community.ediacaran.front.pub.Menu;
 import br.com.uoutec.community.ediacaran.front.pub.MenuBar;
 import br.com.uoutec.community.ediacaran.front.pub.widget.Widget;
@@ -21,8 +23,11 @@ import br.com.uoutec.community.ediacaran.system.repository.ObjectsTemplateManage
 import br.com.uoutec.community.ediacaran.system.repository.PathMetadata;
 import br.com.uoutec.ediacaran.AbstractWebServerBootstrap;
 import br.com.uoutec.ediacaran.core.AbstractPlugin;
+import br.com.uoutec.ediacaran.core.SecurityPolicyUpdater;
 import br.com.uoutec.ediacaran.core.plugins.EntityContextPlugin;
 import br.com.uoutec.ediacaran.core.plugins.PluginType;
+import br.com.uoutec.ediacaran.core.security.PermissionType;
+import br.com.uoutec.ediacaran.core.security.SecurityPermissionRequest;
 import br.com.uoutec.ediacaran.web.tomcat.TomcatUtils;
 import br.com.uoutec.entity.registry.RegistryException;
 
@@ -67,11 +72,55 @@ public class PluginInstaller
 
 	private void installRootPath() {
 		PluginType pluginType = EntityContextPlugin.getEntity(PluginType.class);
-		SystemProperties.setProperty("app.web", TomcatUtils.getPublicPath(pluginType.getConfiguration().getMetadata()).getAbsolutePath().getFullName());
+		String publicPath = TomcatUtils.getPublicPath(pluginType.getConfiguration().getMetadata()).getAbsolutePath().getFullName();
+		SystemProperties.setProperty("app.web", publicPath);
+		
+		SecurityPolicyUpdater securityPolicyUpdater = EntityContextPlugin.getEntity(SecurityPolicyUpdater.class);
+		
+		securityPolicyUpdater.grantPermissions(
+				"front", 
+				new SecurityPermissionRequest(PermissionType.FILE, publicPath + "/-", FileSecurityPermissionActions.ALL.name().toLowerCase())
+		);
+		
+		ObjectsTemplateManager objectsManager = EntityContextPlugin.getEntity(ObjectsTemplateManager.class);
+		
+		PagesObjectsManagerDriver pageObjectDriver = new PagesObjectsManagerDriver();
+		PagesObjectsManagerDriver oldPageObjectDriver = (PagesObjectsManagerDriver) objectsManager.getDriver(pageObjectDriver.getName());
+		
+		if(oldPageObjectDriver != null) {
+			oldPageObjectDriver.getTemplatesIdMap().values().stream()
+				.forEach((e)->pageObjectDriver.registerTemplate(e));
+		}
+		
+		objectsManager.registerDriver(pageObjectDriver);
+		
 	}
 
 	private void uninstallRootPath() {
 		SystemProperties.setProperty("app.web", SystemProperties.getProperty("app.base") + AbstractWebServerBootstrap.WEBAPP_PATH);
+
+		PluginType pluginType = EntityContextPlugin.getEntity(PluginType.class);
+		String publicPath = TomcatUtils.getPublicPath(pluginType.getConfiguration().getMetadata()).getAbsolutePath().getFullName();
+		
+		SecurityPolicyUpdater securityPolicyUpdater = EntityContextPlugin.getEntity(SecurityPolicyUpdater.class);
+		
+		securityPolicyUpdater.revokePermission(
+				"front", 
+				new SecurityPermissionRequest(PermissionType.FILE, publicPath + "/-", FileSecurityPermissionActions.ALL.name().toLowerCase())
+		);
+		
+		ObjectsTemplateManager objectsManager = EntityContextPlugin.getEntity(ObjectsTemplateManager.class);
+
+		PagesObjectsManagerDriver pageObjectDriver = new PagesObjectsManagerDriver();
+		PagesObjectsManagerDriver oldPageObjectDriver = (PagesObjectsManagerDriver) objectsManager.getDriver(pageObjectDriver.getName());
+		
+		if(oldPageObjectDriver != null) {
+			oldPageObjectDriver.getTemplatesIdMap().values().stream()
+				.forEach((e)->pageObjectDriver.registerTemplate(e));
+		}
+		
+		objectsManager.registerDriver(pageObjectDriver);
+		
 	}
 	
 	private void installI18n() throws VfsException, IOException, ReflectiveOperationException {
