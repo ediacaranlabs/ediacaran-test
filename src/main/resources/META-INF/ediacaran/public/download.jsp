@@ -42,61 +42,118 @@
 		<ed:container>
 		<ed:row>
 			<ed:col size="12">
-				<h1>Releases</h1>
 				
-				<ec:separator/>
+				<h2>Versão Atual</h2>
 				
-				<h2>Runtime</h2>
+				<h5>Servidor</h5>
 				
-				<ec:description-list>
-					<ec:description title="1.0.0.1">
-						<ec:icon icon="download"/> <br>
-						10/04/2024<br>
-						Versão de execução contendo os módulos:
-						<ec:list>
-							<ec:list-item><b>System</b></ec:list-item>
-							<ec:list-item><b>Security</b></ec:list-item>
-							<ec:list-item><b>Front</b></ec:list-item>
-							<ec:list-item><b>Front Security</b></ec:list-item>
-							<ec:list-item><b>Ediacaran Test</b></ec:list-item>
-						</ec:list>
-						<a href="#">Mais sobre</a>
-					</ec:description>
-				</ec:description-list>
+				<ec:table style="dark">
+					<ec:table-header>
+						<ec:table-col>Versão</ec:table-col>
+						<ec:table-col>Descrição</ec:table-col>
+						<ec:table-col>Data da liberação</ec:table-col>
+						<ec:table-col>Download</ec:table-col>
+					</ec:table-header>
+					<ec:table-body>
+						<ec:table-row>
+							<ec:table-col>1.0.0</ec:table-col>
+							<ec:table-col>Versão de desenvolvimento</ec:table-col>
+							<ec:table-col>06/06/2024</ec:table-col>
+							<ec:table-col><a href="https://sourceforge.net/projects/ediacaran-application/files/1.0.0/server/ediacaran-dev-1.0.0.zip/download">ZIP (385.2 kB)</a></ec:table-col>
+						</ec:table-row>
+						<ec:table-row>
+							<ec:table-col>1.0.0</ec:table-col>
+							<ec:table-col>Versão de produção</ec:table-col>
+							<ec:table-col>06/06/2024</ec:table-col>
+							<ec:table-col><a href="https://sourceforge.net/projects/ediacaran-application/files/1.0.0/server/ediacaran-1.0.0.zip/download">ZIP (37.9 MB)</a></ec:table-col>
+						</ec:table-row>
+					</ec:table-body>
+				</ec:table>
 
+				<h5>Exemplos</h5>
 				
-				<ec:separator/>
-				
-				<h2>Modulo (projeto)</h2>
-				
-				<ec:description-list>
-					<ec:description title="1.0.0.1">
-						<ec:icon icon="download"/> <br>
-						10/04/2024<br>
-						Projeto base de um novo módulo. Necessário os módulos:
-						<ec:list>
-							<ec:list-item><b>System</b></ec:list-item>
-							<ec:list-item><b>Security</b></ec:list-item>
-							<ec:list-item><b>Front</b></ec:list-item>
-							<ec:list-item><b>Front Security</b></ec:list-item>
-							<ec:list-item><b>Ediacaran Test</b></ec:list-item>
-						</ec:list>
-						<a href="#">Mais sobre</a>
-					</ec:description>
-				</ec:description-list>
+				<ec:table style="dark">
+					<ec:table-header>
+						<ec:table-col>Versão</ec:table-col>
+						<ec:table-col>Descrição</ec:table-col>
+						<ec:table-col>Data da liberação</ec:table-col>
+						<ec:table-col>Download</ec:table-col>
+					</ec:table-header>
+					<ec:table-body>
+						<ec:table-row>
+							<ec:table-col>1.0.0</ec:table-col>
+							<ec:table-col>Teste dos componentes visuais</ec:table-col>
+							<ec:table-col>06/06/2024</ec:table-col>
+							<ec:table-col><a href="https://sourceforge.net/projects/ediacaran-application/files/1.0.0/examples/ediacaran-test.zip/download">ZIP (4.5 MB)</a></ec:table-col>
+						</ec:table-row>
+						<ec:table-row>
+							<ec:table-col>1.0.0</ec:table-col>
+							<ec:table-col>Carregamento de link em um modal</ec:table-col>
+							<ec:table-col>06/06/2024</ec:table-col>
+							<ec:table-col><a href="https://sourceforge.net/projects/ediacaran-application/files/1.0.0/examples/link-modal-project.zip/download">ZIP (14.8 kB)</a></ec:table-col>
+						</ec:table-row>
+						<ec:table-row>
+							<ec:table-col>1.0.0</ec:table-col>
+							<ec:table-col>Configuração de segurança</ec:table-col>
+							<ec:table-col>06/06/2024</ec:table-col>
+							<ec:table-col><a href="https://sourceforge.net/projects/ediacaran-application/files/1.0.0/examples/security-project.zip/download">ZIP (15.9 kB)</a></ec:table-col>
+						</ec:table-row>
+						<ec:table-row>
+							<ec:table-col>1.0.0</ec:table-col>
+							<ec:table-col>Uso de campo imagem</ec:table-col>
+							<ec:table-col>06/06/2024</ec:table-col>
+							<ec:table-col><a href="https://sourceforge.net/projects/ediacaran-application/files/1.0.0/examples/imagefield-plugin-project.zip/download">ZIP (13.0 kB)</a></ec:table-col>
+						</ec:table-row>
+						<ec:table-row>
+							<ec:table-col>1.0.0</ec:table-col>
+							<ec:table-col>Carregamento de link em um div</ec:table-col>
+							<ec:table-col>06/06/2024</ec:table-col>
+							<ec:table-col><a href="https://sourceforge.net/projects/ediacaran-application/files/1.0.0/examples/link-div-project.zip/download">ZIP (15.2 kB)</a></ec:table-col>
+						</ec:table-row>
+						<ec:table-row>
+							<ec:table-col>1.0.0</ec:table-col>
+							<ec:table-col>Paginação de dados</ec:table-col>
+							<ec:table-col>06/06/2024</ec:table-col>
+							<ec:table-col><a href="https://sourceforge.net/projects/ediacaran-application/files/1.0.0/examples/data-table-project.zip/download">ZIP (15.8 kB)</a></ec:table-col>
+						</ec:table-row>
+						<ec:table-row>
+							<ec:table-col>1.0.0</ec:table-col>
+							<ec:table-col>Paginação de dados com quantidade de páginas desconhecida</ec:table-col>
+							<ec:table-col>06/06/2024</ec:table-col>
+							<ec:table-col><a href="https://sourceforge.net/projects/ediacaran-application/files/1.0.0/examples/data-table-unknown-project.zip/download">ZIP (17.0 kB)</a></ec:table-col>
+						</ec:table-row>
+					</ec:table-body>
+				</ec:table>
 
 				<ec:separator/>
 				
-				<h2>JUnit </h2>
+				<h2>Versão Anterior</h2>
 				
-				<ec:description-list>
-					<ec:description title="1.0.0.1">
-						<ec:icon icon="download"/> <br>
-						10/04/2024<br>
-						Permite fazer testes unitários em módulos.<br>
-						<a href="#">Mais sobre</a>
-					</ec:description>
-				</ec:description-list>
+				<ec:table style="dark">
+					<ec:table-header>
+						<ec:table-col>Versão</ec:table-col>
+						<ec:table-col>Descrição</ec:table-col>
+						<ec:table-col>Data da liberação</ec:table-col>
+						<ec:table-col>Download</ec:table-col>
+					</ec:table-header>
+					<ec:table-body>
+					</ec:table-body>
+				</ec:table>
+
+				<ec:separator/>
+
+				<h2>Versões mais antigas</h2>
+				
+				<ec:table style="dark">
+					<ec:table-header>
+						<ec:table-col>Versão</ec:table-col>
+						<ec:table-col>Descrição</ec:table-col>
+						<ec:table-col>Data da liberação</ec:table-col>
+						<ec:table-col>Download</ec:table-col>
+					</ec:table-header>
+					<ec:table-body>
+					</ec:table-body>
+				</ec:table>
 				
 			</ed:col>
 		</ed:row>
