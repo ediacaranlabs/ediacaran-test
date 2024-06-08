@@ -2,7 +2,7 @@
 <%@taglib uri="https://www.uoutec.com.br/ediacaran/tags/components" prefix="ec"%>
 <%@taglib uri="https://www.uoutec.com.br/ediacaran/tags/designer"   prefix="ed"%>
 <%@page trimDirectiveWhitespaces="true" %>
-<ec:load-data file="index" locale="${locale}" var="pageObjects" />
+<ec:load-data file="download" locale="${locale}" var="pageData" />
 <!DOCTYPE html>
 <html>
 

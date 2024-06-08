@@ -1,0 +1,72 @@
+{
+	"head": {
+		"canonical" : "https://www.uoutec.com.br/",
+		"title": "UoU Tecnologia",
+		"og_url": "https://www.uoutec.com.br/",
+		"og_title" : "Ediacaran Application",
+		"og_description" : "Ediacaran é uma aplicação com arquitetura modular.",
+		"description" : "Ediacaran é uma aplicação modular...",
+		"keywords" : "ediacaran,java,bootstrap,jpa,jta,jaas,java 20, java 21,java 8,tomcat,jakarta,jee",
+		"og_type" : "article",
+		"og_img_width" : "560",
+		"og_img_height" : "292",
+		"og_img_type" : "image/jpeg",
+		"og_img" : "https://www.uoutec.com.br/img/img.jpg",
+		"og_img_secure" : "https://www.uoutec.com.br/img/img.jpg",
+		"og_locale" : "pt_BR",
+		"twt_img" : "https://www.uoutec.com.br/img/img.jpg",
+		"twt_card" : "summary_large_image"
+	},
+	"slider": {
+		"button": "Mais",
+		"itens": [
+			{
+				"link" : "/marketplace/index.jsp",
+				"image" : "/marketplace/img/slide/bg-1.jpg",
+				"title" : "Marketplace",
+				"content" : "Comece hoje a ganhar dinheiro com seus modulos em nosso Marketplace!"
+			},
+			{
+				"link" : "#",
+				"image" : "/img/slide/bg-1.jpg",
+				"title" : "Construa aplicações complexas",
+				"content" : "Construa aplicações usando uma arquitetura modular que facilita sua manutenção."
+			},
+			{
+				"link" : "#",
+				"image" : "/img/slide/bg-2.jpg",
+				"title" : "Maior segurança",
+				"content" : "Tenha um maior controle sobre os módulos da sua aplicação com regras de acesso aos seus recursos."
+			},
+			{
+				"link" : "#",
+				"image" : "/img/slide/bg-3.jpg",
+				"title" : "Componentes visuais",
+				"content" : "Construa aplicações com interfaces ricas com a possibilidade da construção de novos componentes."
+			}
+		]
+	},
+	"features": [
+		{
+			"title": "Arquitetura modular",
+			"content" : "Construa aplicações usando uma arquitetura que facilita a escalabilidade e manutenção.",
+			"image": "/img/img-01.jpg"
+		},
+		{
+			"title": "Componentes visuais",
+			"content" : "Construa aplicações com interfaces ricas com a possibilidade da construção de novos componentes.",
+			"image": "/img/img-02.jpg"
+		},
+		{
+			"title": "Maior segurança",
+			"content" : "Tenha um maior controle sobre os módulos da sua aplicação com regras de acesso aos seus recursos.",
+			"image": "/img/img-03.jpg"
+		},
+		{
+			"title": "Gerenciamento de conteúdo",
+			"content" : "Publique e gerencie páginas de forma fácil e intuitiva!",
+			"image": "/img/img-04.jpg"
+		},
+	]
+	
+}

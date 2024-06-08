@@ -1,0 +1,72 @@
+{
+	"head": {
+		"canonical" : "https://www.uoutec.com.br/",
+		"title": "UoU Technology",
+		"og_url": "https://www.uoutec.com.br/",
+		"og_title" : "Ediacaran Application",
+		"og_description" : "Ediacaran is an application with modular architecture.",
+		"description" : "Ediacaran is a modular application...",
+		"keywords" : "ediacaran,java,bootstrap,jpa,jta,jaas,java 20, java 21,java 8,tomcat,jakarta,jee",
+		"og_type" : "article",
+		"og_img_width" : "560",
+		"og_img_height" : "292",
+		"og_img_type" : "image/jpeg",
+		"og_img" : "https://www.uoutec.com.br/img/img.jpg",
+		"og_img_secure" : "https://www.uoutec.com.br/img/img.jpg",
+		"og_locale" : "en_US",
+		"twt_img" : "https://www.uoutec.com.br/img/img.jpg",
+		"twt_card" : "summary_large_image"
+	},
+	"slider": {
+		"button": "Mais",
+		"itens": [
+			{
+				"link" : "/marketplace/index.jsp",
+				"image" : "/marketplace/img/slide/bg-1.jpg",
+				"title" : "Marketplace",
+				"content" : "Start making money today with your modules in our Marketplace!"
+			},
+			{
+				"link" : "#",
+				"image" : "/img/slide/bg-1.jpg",
+				"title" : "Build complex applications",
+				"content" : "Build applications using a modular architecture that makes it easy to maintain."
+			},
+			{
+				"link" : "#",
+				"image" : "/img/slide/bg-2.jpg",
+				"title" : "Increased security",
+				"content" : "Have greater control over the modules of your application with rules for accessing your resources."
+			},
+			{
+				"link" : "#",
+				"image" : "/img/slide/bg-3.jpg",
+				"title" : "Visual Components",
+				"content" : "Build applications with rich interfaces with the possibility of building new components."
+			}
+		]
+	},
+	"features": [
+		{
+			"title": "Modular Architecture",
+			"content" : "Build applications using an architecture that facilitates scalability and maintenance.",
+			"image": "/img/img-01.jpg"
+		},
+		{
+			"title": "Visual Components",
+			"content" : "Build applications with rich interfaces with the possibility of building new components.",
+			"image": "/img/img-02.jpg"
+		},
+		{
+			"title": "Increased security",
+			"content" : "Have greater control over the modules of your application with rules for accessing your resources.",
+			"image": "/img/img-03.jpg"
+		},
+		{
+			"title": "Content Management",
+			"content" : "Publish and manage pages easily and intuitively!",
+			"image": "/img/img-04.jpg"
+		},
+	]
+	
+}
