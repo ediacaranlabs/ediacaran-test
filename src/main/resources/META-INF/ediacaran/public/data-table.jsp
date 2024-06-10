@@ -44,6 +44,7 @@
 					</ed:row>
 					
 					<ec:data-table action="${pageContext.request.contextPath}/data-table/search">
+						<!-- start search form  -->
 						<ed:row>
 							<ed:col size="2">
 					    		<ec:field-group>
@@ -65,6 +66,8 @@
 				    			<ec:button actionType="submit" label="Search"/>
 							</ed:col>
 						</ed:row>
+						<!-- end search form  -->
+						<!-- start search result  -->
 						<ec:data-result var="response">
 							<ec:forEach items="!{response.data}" var="item">
 								<ed:row>
@@ -84,6 +87,7 @@
 								</ed:row>
 							</ec:forEach>
 						</ec:data-result>
+						<!-- end search result  -->
 					</ec:data-table>
 					
 					<ed:row>
@@ -94,6 +98,7 @@
 					
 					
 					<ec:data-table action="${pageContext.request.contextPath}/data-table/search">
+						<!-- start search form  -->
 						<ed:row>
 							<ed:col size="2">
 					    		<ec:field-group>
@@ -115,6 +120,8 @@
 				    			<ec:button actionType="submit" label="Search"/>
 							</ed:col>
 						</ed:row>
+						<!-- end search form  -->
+						<!-- start search result  -->
 						<ec:data-result var="response">
 						<ed:row>
 							<ec:forEach items="!{response.data}" var="item">
@@ -126,7 +133,7 @@
 										<p>!{item.gender}</p>
 									</ec:box-body>
 									<ec:box-footer>
-										<a href="#m${pageContext.request.contextPath}/form-request-response/details/json/!{item.id}"
+										<a href="#m${pageContext.request.contextPath}/form-request-response/details/json/!{item.id}" 
 										dest-content="details">Show</a>
 									</ec:box-footer>
 								</ec:box>
@@ -134,6 +141,7 @@
 							</ec:forEach>						
 						</ed:row>
 						</ec:data-result>
+						<!-- end search result  -->
 					</ec:data-table>
 
 					<ed:row>

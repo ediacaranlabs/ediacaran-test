@@ -17,8 +17,6 @@ import org.brandao.brutos.annotation.web.RequestMethod;
 
 @Singleton
 @Controller(value="/data-table")
-@AcceptRequestType(MediaTypes.APPLICATION_JSON)
-@ResponseType(MediaTypes.APPLICATION_JSON)
 public class DataTablePubResource {
 
 	@Transient
@@ -27,12 +25,16 @@ public class DataTablePubResource {
 
 	@Action(value="/search")
 	@RequestMethod("POST")
+	@AcceptRequestType(MediaTypes.APPLICATION_JSON)
+	@ResponseType(MediaTypes.APPLICATION_JSON)
 	public synchronized Serializable search(@DetachedName SearchRequest request){
 		return searchExampleEntity(request);
 	}
 
 	@Action(value="/search-unknown-pages")
 	@RequestMethod("POST")
+	@AcceptRequestType(MediaTypes.APPLICATION_JSON)
+	@ResponseType(MediaTypes.APPLICATION_JSON)
 	public synchronized Serializable searchWithoutPages(@DetachedName SearchRequest request){
 		return searchExampleEntityWithoutPages(request);
 	}
