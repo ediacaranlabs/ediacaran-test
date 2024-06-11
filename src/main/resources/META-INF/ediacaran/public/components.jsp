@@ -45,45 +45,45 @@
 							<ec:gallery-filter name="Filter A" code="filter_a"/>
 						</ec:gallery-filters>
 						<ec:gallery-images>
-							<ec:gallery-image filter="filter_a" 
-								icon="/img/gallery/thumbs/image-01.jpg" 
-								text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis." 
-								src="/img/gallery/full/image-01-full.jpg" 
+							<ec:gallery-image filter="filter_a" icon="/img/gallery/thumbs/image-01.jpg" 
+								text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+								Phasellus quis elementum odio. Curabitur pellentesque, 
+								dolor vel pharetra mollis." src="/img/gallery/full/image-01-full.jpg" 
 								title="The City" />
-							<ec:gallery-image filter="filter_a" 
-								icon="/img/gallery/thumbs/image-02.jpg" 
-								text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis." 
-								src="/img/gallery/full/image-02-full.jpg" 
+							<ec:gallery-image filter="filter_a" icon="/img/gallery/thumbs/image-02.jpg" 
+								text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+								Phasellus quis elementum odio. Curabitur pellentesque, 
+								dolor vel pharetra mollis." src="/img/gallery/full/image-02-full.jpg" 
 								title="The City"/>
-							<ec:gallery-image filter="filter_a" 
-								icon="/img/gallery/thumbs/image-03.jpg" 
-								text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis." 
-								src="/img/gallery/full/image-03-full.jpg" 
+							<ec:gallery-image filter="filter_a" icon="/img/gallery/thumbs/image-03.jpg" 
+								text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+								Phasellus quis elementum odio. Curabitur pellentesque, 
+								dolor vel pharetra mollis." 
+								src="/img/gallery/full/image-03-full.jpg" title="The City"/>
+							<ec:gallery-image icon="/img/gallery/thumbs/image-04.jpg"
+								text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+								Phasellus quis elementum odio. Curabitur pellentesque, 
+								dolor vel pharetra mollis." src="/img/gallery/full/image-04-full.jpg" 
 								title="The City"/>
-							<ec:gallery-image
-								icon="/img/gallery/thumbs/image-04.jpg" 
-								text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis." 
-								src="/img/gallery/full/image-04-full.jpg" 
+							<ec:gallery-image icon="/img/gallery/thumbs/image-05.jpg" 
+								text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+								Phasellus quis elementum odio. Curabitur pellentesque, 
+								dolor vel pharetra mollis." src="/img/gallery/full/image-05-full.jpg" 
 								title="The City"/>
-							<ec:gallery-image 
-								icon="/img/gallery/thumbs/image-05.jpg" 
-								text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis." 
-								src="/img/gallery/full/image-05-full.jpg" 
+							<ec:gallery-image filter="filter_a" icon="/img/gallery/thumbs/image-06.jpg" 
+								text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+								Phasellus quis elementum odio. Curabitur pellentesque, 
+								dolor vel pharetra mollis." src="/img/gallery/full/image-06-full.jpg" 
 								title="The City"/>
-							<ec:gallery-image filter="filter_a" 
-								icon="/img/gallery/thumbs/image-06.jpg" 
-								text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis." 
-								src="/img/gallery/full/image-06-full.jpg" 
+							<ec:gallery-image icon="/img/gallery/thumbs/image-07.jpg" 
+								text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+								Phasellus quis elementum odio. Curabitur pellentesque, 
+								dolor vel pharetra mollis." src="/img/gallery/full/image-07-full.jpg" 
 								title="The City"/>
-							<ec:gallery-image 
-								icon="/img/gallery/thumbs/image-07.jpg" 
-								text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis." 
-								src="/img/gallery/full/image-07-full.jpg" 
-								title="The City"/>
-							<ec:gallery-image filter="filter_a" 
-								icon="/img/gallery/thumbs/image-08.jpg" 
-								text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis." 
-								src="/img/gallery/full/image-08-full.jpg" 
+							<ec:gallery-image filter="filter_a" icon="/img/gallery/thumbs/image-08.jpg" 
+								text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+								Phasellus quis elementum odio. Curabitur pellentesque, 
+								dolor vel pharetra mollis." src="/img/gallery/full/image-08-full.jpg" 
 								title="The City"/>
 						</ec:gallery-images>
 					</ec:gallery>
