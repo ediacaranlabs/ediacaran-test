@@ -2,7 +2,7 @@ package br.com.uoutec.community.ediacaran.test;
 
 import br.com.uoutec.application.SystemProperties;
 import br.com.uoutec.application.security.FileSecurityPermissionActions;
-import br.com.uoutec.community.ediacaran.front.objects.PagesObjectsManagerDriver;
+import br.com.uoutec.community.ediacaran.front.page.PagesObjectsManagerDriver;
 import br.com.uoutec.community.ediacaran.system.repository.ObjectsTemplateManager;
 import br.com.uoutec.ediacaran.AbstractWebServerBootstrap;
 import br.com.uoutec.ediacaran.core.SecurityPolicyUpdater;

@@ -52,83 +52,65 @@
 		<ed:container>
 		<ed:row style="section">
 			<ed:col size="6">
-				<iframe width="420" height="250" src="https://www.youtube.com/embed/ZhaWT011Dyo?si=F2JWMkMEVWIUSEA5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+				<iframe width="420" height="250" src="https://www.youtube.com/embed/kviYvWo99f4" title="Ediacaran Application" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 			</ed:col>
 			<ed:col size="6">
-				<h1><b>Criando um plugin</b></h1>
-				<h4>Aprenda a criar um plugin.</h4>
-			</ed:col>
-		</ed:row>
-		<ed:row style="section">
-			<ed:col size="6">
-				<iframe width="420" height="250" src="https://www.youtube.com/embed/GJAoX_iNoz4?si=Jx0jLbvMyiGJlY2r" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-			</ed:col>
-			<ed:col size="6">
-				<h1><b>Estrutura de diretórios</b></h1>
-				<h4>Entenda a estrutura de diretórios de uma aplicação.</h4>
+				<h1><b>Ediacaran Application</b></h1>
+				<h4>Ediacaran Application</h4>
 			</ed:col>
 		</ed:row>
 		<ed:row style="section">
 			<ed:col size="6">
-				<iframe width="420" height="250" src="https://www.youtube.com/embed/Hfrs8vPt30U?si=WnwKQ6_Ib_cx108i" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+				<iframe width="420" height="250" src="https://www.youtube.com/embed/DLwfFcvQn5g" title="How to setup ediacaran development environment in eclipse" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 			</ed:col>
 			<ed:col size="6">
-				<h1><b>Estrutura de deretórios de um plugin</b></h1>
-				<h4>Entenda a estrutura de diretórios de um plugin.</h4>
-			</ed:col>
-		</ed:row>
-		<ed:row style="section">
-			<ed:col size="6">
-				<iframe width="420" height="250" src="https://www.youtube.com/embed/4fvIZj8q6_A?si=aQ-iahgOYnYC4GbB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-			</ed:col>
-			<ed:col size="6">
-				<h1><b>Instalando e desinstalando um plugin</b></h1>
-				<h4>Aprenda a instalar e desinstalar um plugin em uma aplicação.</h4>
+				<h1><b>Ediacaran development environment</b></h1>
+				<h4>How to setup ediacaran development environment in eclipse</h4>
 			</ed:col>
 		</ed:row>
 		<ed:row style="section">
 			<ed:col size="6">
-				<iframe width="420" height="250" src="https://www.youtube.com/embed/1jTtpyrDZCo?si=LRtVFOORr5p01tZl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+				<iframe width="420" height="250" src="https://www.youtube.com/embed/BSjePpKIIlI" title="Directory Structure of Ediacaran" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 			</ed:col>
 			<ed:col size="6">
-				<h1><b>Componente de campo imagem</b></h1>
-				<h4>Selecione, edite e submeta imagens usando formulário.</h4>
-			</ed:col>
-		</ed:row>
-		<ed:row style="section">
-			<ed:col size="6">
-				<iframe width="420" height="250" src="https://www.youtube.com/embed/G5o_3kntcEg?si=G6MFqSY9q9-7nv2H" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-			</ed:col>
-			<ed:col size="6">
-				<h1><b>Carregamento de conteúdo em div</b></h1>
-				<h4>Aprenda a carregar o conteúdo de um link em uma div.</h4>
+				<h1><b>Directory Structure</b></h1>
+				<h4>Directory Structure of Ediacaran</h4>
 			</ed:col>
 		</ed:row>
 		<ed:row style="section">
 			<ed:col size="6">
-				<iframe width="420" height="250" src="https://www.youtube.com/embed/AymveMK7nn8?si=DtznxDsgGGtFOs9t" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+				<iframe width="420" height="250" src="https://www.youtube.com/embed/dLMZMswtDig" title="How to create a new ediacaran module project in eclipse." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 			</ed:col>
 			<ed:col size="6">
-				<h1><b>Carregamento de conteúdo em um modal</b></h1>
-				<h4>Aprenda a carregar o conteúdo de um link em um modal.</h4>
-			</ed:col>
-		</ed:row>
-		<ed:row style="section">
-			<ed:col size="6">
-				<iframe width="420" height="250" src="https://www.youtube.com/embed/0Ko4aj0E1Rw?si=JqXE8vFOz0efHMpT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-			</ed:col>
-			<ed:col size="6">
-				<h1><b>Paginação de dados</b></h1>
-				<h4>Aprenda a fazer a paginação de dados.</h4>
+				<h1><b>Creating new module</b></h1>
+				<h4>How to create a new Ediacaran module project in eclipse.</h4>
 			</ed:col>
 		</ed:row>
 		<ed:row style="section">
 			<ed:col size="6">
-				<iframe width="420" height="250" src="https://www.youtube.com/embed/qdox_Rm2MJY?si=7s13Zgd7hgF791Wf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+				<iframe width="420" height="250" src="https://www.youtube.com/embed/hswbSbY6EBs" title="Consuming WebServices in Ediacaran Frontend" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 			</ed:col>
 			<ed:col size="6">
-				<h1><b>Paginação de dados sem quantidade de páginas</b></h1>
-				<h4>Aprenda a fazer a paginação de dados desconhecendo a quantidade máxima de páginas.</h4>
+				<h1><b>Consuming WebServices</b></h1>
+				<h4>Consuming WebServices in Ediacaran Frontend</h4>
+			</ed:col>
+		</ed:row>
+		<ed:row style="section">
+			<ed:col size="6">
+				<iframe width="420" height="250" src="https://www.youtube.com/embed/edF8J0sM644" title="Image gallery with Ediacaran" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</ed:col>
+			<ed:col size="6">
+				<h1><b>Image gallery</b></h1>
+				<h4>Image gallery with Ediacaran</h4>
+			</ed:col>
+		</ed:row>
+		<ed:row style="section">
+			<ed:col size="6">
+				<iframe width="420" height="250" src="https://www.youtube.com/embed/QaCG5NtsmiM" title="Image field with Ediacaran" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</ed:col>
+			<ed:col size="6">
+				<h1><b>Image field</b></h1>
+				<h4>Image field with Ediacaran</h4>
 			</ed:col>
 		</ed:row>
 		</ed:container>
