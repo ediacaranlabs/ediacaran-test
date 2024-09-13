@@ -10,8 +10,8 @@ public class WidgetsConfiguration {
 	private Widgets widgets;
 	
 	public void apply() throws WidgetException {
-		getWidgets().addWidget(new Widget("w1", "/admin/widgets/w1.jsp", 100));
-		getWidgets().addWidget(new Widget("w2", "/admin/widgets/w2.jsp", 100));
+		getWidgets().addWidget(Widget.builder().withName("w1").withResource("/admin/widgets/w1.jsp").withOrder(100).build());
+		getWidgets().addWidget(Widget.builder().withName("w2").withResource("/admin/widgets/w2.jsp").withOrder(100).build());
 	}
 	
 	private Widgets getWidgets() {
